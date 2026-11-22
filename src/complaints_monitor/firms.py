@@ -66,12 +66,33 @@ def renamed_firms(ids: pd.DataFrame) -> pd.DataFrame:
     return ids[ids["firm_id"].isin(grouped[grouped > 1].index)].sort_values(["firm_id", "firm_name"])
 
 
+def _prefer_mixed_case(latest_names: pd.Series, rows: pd.DataFrame) -> pd.Series:
+    """Latest name per firm, swapped for a mixed-case spelling of the same name where one exists."""
+    spellings = rows[["firm_id", "firm_name", "_order"]].assign(_key=rows["firm_name"].map(name_key))
+    mixed = spellings[spellings["firm_name"].str.upper() != spellings["firm_name"]]
+    best = mixed.sort_values("_order").groupby(["firm_id", "_key"])["firm_name"].last()
+    out = latest_names.copy()
+    for firm_id, name in latest_names.items():
+        if name.upper() == name:
+            out[firm_id] = best.get((firm_id, name_key(name)), name)
+    return out
+
+
 def firm_dimension(firm_rows: pd.DataFrame, reference: pd.DataFrame) -> pd.DataFrame:
-    """One row per firm: latest published name and group, first and last period, FRN."""
+    """One row per firm: latest published name and group, first and last period, FRN.
+
+    Some releases publish names in capitals ("NATIONAL WESTMINSTER BANK PUBLIC
+    LIMITED COMPANY"). When the latest name is all capitals, the most recent
+    spelling of the same name (same name_key) published in mixed case is used
+    instead ("National Westminster Bank Plc"), so the name is always one the FCA
+    published. A firm's renames are not undone: only spellings of its latest
+    name are considered.
+    """
     from .periods import label_sort_key
 
     rows = firm_rows.assign(_order=firm_rows["period_label"].map(label_sort_key)).sort_values("_order")
     latest = rows.groupby("firm_id").last()
+    latest["firm_name"] = _prefer_mixed_case(latest["firm_name"], rows)
     summary = rows.groupby("firm_id").agg(
         first_period=("period_label", "first"),
         last_period=("period_label", "last"),

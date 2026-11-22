@@ -207,6 +207,11 @@ def _read_consumer_credit(rows, label, sheet, issues) -> list[dict]:
                     continue
                 if text and to_number(text) is None and not is_error_token(text):
                     continue  # a web address or other note
+                if is_error_token(text) and text.upper() not in {"-", "(BLANK)"}:
+                    field_name = ("received", "closed", "upheld")[len(figures)]
+                    _issue(
+                        issues, label, sheet, firm, "spreadsheet error value ignored", f"{field_name}: {text}"
+                    )
             figures.append(to_number(value))
             if len(figures) == 3:
                 break

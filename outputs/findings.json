@@ -171,7 +171,7 @@
       },
       {
         "firm_id": "ETORO UK",
-        "firm_name_latest": "ETORO (UK) LIMITED",
+        "firm_name_latest": "eToro (UK) Ltd",
         "product_group": "Investments",
         "closed": 620.0,
         "uphold_rate": 0.02258064516129032,
@@ -243,7 +243,7 @@
       },
       {
         "firm_id": "MONZO BANK",
-        "firm_name_latest": "MONZO BANK LIMITED",
+        "firm_name_latest": "Monzo Bank Ltd",
         "product_group": "Banking and credit cards",
         "closed": 70687.0,
         "uphold_rate": 0.2397046132952311,
@@ -251,7 +251,7 @@
       },
       {
         "firm_id": "MUNICH RE DIGITAL PARTNERS",
-        "firm_name_latest": "MUNICH RE DIGITAL PARTNERS LIMITED",
+        "firm_name_latest": "Munich Re Digital Partners Ltd",
         "product_group": "Insurance & pure protection",
         "closed": 2338.0,
         "uphold_rate": 0.05089820359281437,
@@ -315,7 +315,7 @@
       },
       {
         "firm_id": "SECURE TRUST BANK",
-        "firm_name_latest": "SECURE TRUST BANK PUBLIC LIMITED COMPANY",
+        "firm_name_latest": "Secure Trust Bank Plc",
         "product_group": "Banking and credit cards",
         "closed": 334.0,
         "uphold_rate": 0.30538922155688625,
@@ -379,7 +379,7 @@
       },
       {
         "firm_id": "USAY BUSINESS",
-        "firm_name_latest": "USAY BUSINESS LTD",
+        "firm_name_latest": "Usay Business Limited",
         "product_group": "Insurance & pure protection",
         "closed": 590.0,
         "uphold_rate": 0.23220338983050848,
@@ -513,7 +513,7 @@
       },
       {
         "firm_id": "CREATION CONSUMER FINANCE",
-        "firm_name_latest": "CREATION CONSUMER FINANCE LIMITED",
+        "firm_name_latest": "Creation Consumer Finance Ltd",
         "product_group": "Banking and credit cards",
         "fca_uphold_rate": 0.3988,
         "fos_uphold_rate": 0.4143835616,

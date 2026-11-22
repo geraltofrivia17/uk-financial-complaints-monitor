@@ -1,3 +1,4 @@
+import pandas as pd
 import pytest
 
 from complaints_monitor.fca_firm import classify_sheet, parse_workbook
@@ -216,3 +217,28 @@ def test_consumer_credit_upheld_counts_become_shares(workbook):
     credit_rows = parsed.consumer_credit.set_index("firm_name")
     assert credit_rows.upheld_unit.unique().tolist() == ["count"]
     assert credit_rows.loc["Alpha Bank Plc"].pct_upheld == pytest.approx(353 / 864)
+
+
+def test_consumer_credit_error_cells_are_logged(workbook):
+    credit = [
+        [
+            "Firm Name",
+            "Group",
+            "Joint Report",
+            "Reporting frequency",
+            "Reporting period",
+            "Complaints Received",
+            "Complaints Closed",
+            "Complaints upheld by firm",
+        ],
+        ["Alpha Bank Plc", "A", "no", "Half Yearly", "2019-01-01 to 2019-06-30", 0, 0, "#DIV/0!"],
+    ]
+    parsed = parse_workbook(_release(workbook, credit_rows=credit), "2019 H1")
+    row = parsed.consumer_credit.iloc[0]
+    assert row.received == 0 and pd.isna(row.pct_upheld)  # missing, not zero
+    logged = [
+        i["detail"]
+        for i in parsed.issues
+        if i["issue"] == "spreadsheet error value ignored" and i["sheet"] == "Consumer Credit"
+    ]
+    assert logged == ["upheld: #DIV/0!"]

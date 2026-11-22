@@ -1,5 +1,9 @@
 # UK Financial Complaints Monitor
 
+[![CI](https://github.com/geraltofrivia17/uk-financial-complaints-monitor/actions/workflows/ci.yml/badge.svg)](https://github.com/geraltofrivia17/uk-financial-complaints-monitor/actions/workflows/ci.yml)
+
+**Python · SQL Server (T-SQL) · Power BI (DAX, PBIP) · pytest · GitHub Actions**
+
 Complaints reporting for UK financial services, built from the public complaints data published by the Financial Conduct Authority (FCA) and the Financial Ombudsman Service. Twenty half-years of releases (2016 H2 to 2026 H1) are loaded into a SQL Server warehouse, checked, and reported in Power BI. The analysis asks three questions a complaints or conduct-risk team would ask:
 
 1. How are complaint volumes, uphold rates and handling times moving, by product?
@@ -19,7 +23,7 @@ Complaints reporting for UK financial services, built from the public complaints
 - Pensions and decumulation complaints were the most often upheld (70.4%) and the slowest to resolve: 21.5% closed within three days, against 49.7% for banking and credit cards.
 
 **Firms (2026 H1, 226 firms in the FCA's firm-level tables)**
-- Ten firms received **48%** of the complaints in the firm-level tables. The largest were Lloyds Bank PLC, Nationwide Building Society, NATIONAL WESTMINSTER BANK PUBLIC LIMITED COMPANY.
+- Ten firms received **48%** of the complaints in the firm-level tables. The largest were Lloyds Bank PLC, Nationwide Building Society and National Westminster Bank Plc.
 - On standard binomial limits, **243 of 300** firm and product combinations look unusual. That says more about the method than the firms: with tens of thousands of complaints, the limits become very narrow and ignore the real differences between firms' customers and products. After allowing for that variation (an overdispersion adjustment), **41** stand out: 4 above the expected uphold rate and 37 below it.
 
 **Firms against the Ombudsman (2025 H1, 110 firm and product pairs)**
@@ -45,12 +49,16 @@ The DAX measures (35, in display folders) recompute every rate from counts, and 
 
 ![Power BI: market overview](docs/images/powerbi_market_overview.png)
 
+![Power BI: firm benchmarking](docs/images/powerbi_firm_benchmarking.png)
+
+![Power BI: firms against the Ombudsman](docs/images/powerbi_firms_vs_ombudsman.png)
+
 ## What is in the repository
 
 | Layer | What it does |
 |---|---|
-| **Python ingestion** ([src/complaints_monitor](src/complaints_monitor)) | Downloads and parses 20 FCA firm-level releases, 9 FCA market-total releases and 20 Ombudsman releases. The layouts changed many times: sheets renamed and reordered, header rows moved, a sheet whose columns are shifted against its header, upheld figures published as shares in some years and counts in others. Every value set aside is logged (191 entries in [issues.csv](data/processed/issues.csv)). |
-| **Firm identity** | 636 firms across 8,133 firm, product and period rows. Names are normalised, and 61 firms published under more than one name are joined, using the FCA reference number where a release gives it. |
+| **Python ingestion** ([src/complaints_monitor](src/complaints_monitor)) | Downloads and parses 20 FCA firm-level releases, 9 FCA market-total releases and 20 Ombudsman releases. The layouts changed many times: sheets renamed and reordered, header rows moved, a sheet whose columns are shifted against its header, upheld figures published as shares in some years and counts in others. Every row realigned and every value set aside is logged (196 entries in [issues.csv](data/processed/issues.csv)). |
+| **Firm identity** | 636 firms across 8,133 firm, product and period rows. Names are normalised, so the 79 firms whose name was spelt in more than one way (case, punctuation, "Ltd" or "Limited") count once, and the 11 firms that changed name (for example Advanced Payment Solutions to Zempler Bank) are joined using the FCA reference number. |
 | **FCA to Ombudsman matching** | 466 Ombudsman business names are linked to FCA firms by normalised name, covering 83.9% of Ombudsman cases. Fuzzy matching offered 34 further pairs; 33 were different firms with similar names (for example two insurers sharing "Insurance Company Limited"), so only reviewed pairs are used ([firm_map_review.csv](data/reference/firm_map_review.csv)). |
 | **Data-quality checks** | 16 checks run on every build: 15 pass and 1 warn ([dq_checks.csv](data/processed/dq_checks.csv)). Firm-level complaints are 91.5% to 104.2% of the FCA's market totals across the 20 half-years. They are not expected to match: the market total covers over 3,000 firms and the firm tables only those above the publication threshold (226 in 2026 H1), reporting on their own financial half-years. |
 | **SQL Server warehouse** ([sql/](sql)) | T-SQL star schema (dimensions for period, product group and firm; facts for firm complaints, consumer credit, market totals and Ombudsman outcomes), reporting views for Power BI, and SQL data tests. |

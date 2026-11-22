@@ -8,7 +8,7 @@ All tables are written to `data/processed/` by `build` and loaded into SQL Serve
 |---|---|---|
 | `dim_period` | source, period_label | start_date, end_date, months, min_threshold (Ombudsman publication threshold), note, period_order (year x 10 + half, so one year earlier is order − 10) |
 | `dim_product_group` | product_group | sort_order. The FCA's five groups: Banking and credit cards; Decumulation & pensions; Home finance; Insurance & pure protection; Investments |
-| `dim_firm` | firm_id | firm_name_latest, firm_group_latest, first_period, last_period, periods_reported, names_used, frn (FCA reference number where published) |
+| `dim_firm` | firm_id | firm_name_latest (latest published name, in a published mixed-case spelling where one exists), firm_group_latest, first_period, last_period, periods_reported, names_used, frn (FCA reference number where published) |
 
 ## Facts (schema `dw`)
 

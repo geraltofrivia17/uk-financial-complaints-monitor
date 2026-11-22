@@ -11,6 +11,7 @@ import string
 
 import pandas as pd
 
+from .names import match_key
 from .settings import Settings, load_settings
 
 
@@ -31,6 +32,7 @@ def fields(settings: Settings) -> dict[str, str]:
     checks = pd.read_csv(settings.processed / "dq_checks.csv")
     issues = pd.read_csv(settings.processed / "issues.csv")
     fp = pd.read_csv(settings.processed / "fact_fca_firm_product.csv")
+    cc = pd.read_csv(settings.processed / "fact_fca_consumer_credit.csv")
     fos = pd.read_csv(settings.processed / "fact_fos_business_category.csv")
     dim = pd.read_csv(settings.processed / "dim_firm.csv")
     firm_map = pd.read_csv(settings.processed / "firm_map.csv")
@@ -40,7 +42,9 @@ def fields(settings: Settings) -> dict[str, str]:
     products = s["by_product_latest"]
     top = list(s["concentration"]["top10"].items())
     names = dim.set_index("firm_id").firm_name_latest
-    renamed = fp.groupby("firm_id").firm_name.nunique()
+    all_names = pd.concat([fp[["firm_id", "firm_name"]], cc[["firm_id", "firm_name"]]]).drop_duplicates()
+    spellings = all_names.groupby("firm_id").firm_name.nunique()
+    renamed = all_names.assign(key=all_names.firm_name.map(match_key)).groupby("firm_id").key.nunique()
     coverage = checks.set_index("check").actual
     return {
         "latest": s["latest_fca_period"],
@@ -63,7 +67,7 @@ def fields(settings: Settings) -> dict[str, str]:
         "insurance_opened": f"{products['Insurance & pure protection']['opened']:,}",
         "firms_latest": str(s["concentration"]["firms"]),
         "top10_share": pct(s["concentration"]["top10_share"], 0),
-        "top3": ", ".join(names[f] for f, _ in top[:3]),
+        "top3": "{}, {} and {}".format(*(names[f] for f, _ in top[:3])),
         "funnel_compared": str(funnel["firm_groups_compared"]),
         "funnel_binomial": str(funnel["outside_998_binomial"]),
         "funnel_adjusted": str(funnel["outside_998_adjusted"]),
@@ -78,6 +82,7 @@ def fields(settings: Settings) -> dict[str, str]:
         "fos_periods": str(len(ombudsman["periods_compared"])),
         "firm_rows": f"{len(fp):,}",
         "firms_total": f"{len(dim):,}",
+        "firms_spellings": str(int((spellings > 1).sum())),
         "firms_renamed": str(int((renamed > 1).sum())),
         "fos_rows": f"{len(fos):,}",
         "fos_link_share": str(coverage["Share of Ombudsman new cases linked to an FCA-listed firm"]),

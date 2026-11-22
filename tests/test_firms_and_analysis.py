@@ -34,6 +34,28 @@ def test_renamed_firms_are_joined_by_reference_number():
     assert ids.tolist() == ["ZEMPLER BANK"]
 
 
+def test_capitals_name_takes_a_published_mixed_case_spelling():
+    rows = pd.DataFrame(
+        {
+            "firm_id": ["NATWEST", "NATWEST", "ZEMPLER BANK", "ZEMPLER BANK", "SHOUTY"],
+            "firm_name": [
+                "National Westminster Bank Plc",
+                "NATIONAL WESTMINSTER BANK PUBLIC LIMITED COMPANY",
+                "Advanced Payment Solutions Ltd",
+                "ZEMPLER BANK LIMITED",
+                "SHOUTY FINANCE LTD",
+            ],
+            "firm_group": [None] * 5,
+            "period_label": ["2025 H1", "2026 H1", "2024 H1", "2026 H1", "2026 H1"],
+        }
+    )
+    dim = firms.firm_dimension(rows, pd.DataFrame()).set_index("firm_id").firm_name_latest
+    assert dim["NATWEST"] == "National Westminster Bank Plc"
+    # A rename is not undone, and a name never published in mixed case stays as published.
+    assert dim["ZEMPLER BANK"] == "ZEMPLER BANK LIMITED"
+    assert dim["SHOUTY"] == "SHOUTY FINANCE LTD"
+
+
 def test_only_exact_names_link_automatically():
     fca = pd.DataFrame(
         {

@@ -31,7 +31,7 @@ Each entry records a decision, the alternatives and the evidence. Later entries 
 ## Firm identity across renames
 
 **Decision:** firm key = normalised name without legal suffixes; FCA reference numbers join renamed firms.
-**Evidence:** without the FRN step, 22 firms would split into two or more firms across the period (for example Royal & Sun Alliance Insurance and Intact Insurance UK, DAS and ARAG Legal Expenses, Advanced Payment Solutions and Zempler Bank).
+**Evidence:** without the FRN step, 11 firms would split into two or more firms across the period (for example Royal & Sun Alliance Insurance and Intact Insurance UK, DAS and ARAG Legal Expenses, Advanced Payment Solutions and Zempler Bank).
 
 ## Fuzzy matches are never accepted automatically
 

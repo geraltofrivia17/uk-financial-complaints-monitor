@@ -355,7 +355,7 @@ def chart_fca_vs_fos(pairs: pd.DataFrame, period: str, path) -> None:
             label=group,
         )
     ax.plot([0, 100], [0, 100], color=MUTED, linewidth=1, linestyle=(0, (4, 3)))
-    ax.text(97, 92, "Same rate", color=MUTED, fontsize=8, ha="right")
+    ax.text(88, 94, "Same rate", color=MUTED, fontsize=8, ha="right", va="center")
     gaps = data.nlargest(5, "uphold_gap")
     _label_points(
         ax,

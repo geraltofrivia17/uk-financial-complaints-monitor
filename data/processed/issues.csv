@@ -1,9 +1,14 @@
 source,period_label,sheet,firm_name,issue,detail
 FCA firm,2016 H2,,,rows with no complaints opened or closed dropped,688
+FCA firm,2017 H1,(1.8) Consumer Credit,Landmark Mortgages Limited,spreadsheet error value ignored,upheld: #DIV/0!
 FCA firm,2017 H1,,,rows with no complaints opened or closed dropped,79
+FCA firm,2017 H2,(1.8) Consumer Credit,"Carphone Warehouse Ltd, The",spreadsheet error value ignored,upheld: #DIV/0!
 FCA firm,2017 H2,,,rows with no complaints opened or closed dropped,21
 FCA firm,2018 H1,,,rows with no complaints opened or closed dropped,34
 FCA firm,2018 H2,,,rows with no complaints opened or closed dropped,7
+FCA firm,2019 H1,(1.8) Consumer Credit,Newcastle Building Society,spreadsheet error value ignored,upheld: #DIV/0!
+FCA firm,2019 H1,(1.8) Consumer Credit,SSE Home Services Limited,spreadsheet error value ignored,upheld: #DIV/0!
+FCA firm,2019 H1,(1.8) Consumer Credit,Sun Life Assurance Company of Canada (U.K.) Limited,spreadsheet error value ignored,upheld: #DIV/0!
 FCA firm,2019 H1,,,rows with no complaints opened or closed dropped,57
 FCA firm,2019 H2,(1.8) Consumer Credit,Acorn Insurance & Financial Services Ltd,columns shifted against header,offset -1
 FCA firm,2019 H2,(1.8) Consumer Credit,Active Securities Limited,columns shifted against header,offset -1

@@ -23,6 +23,7 @@
 - A firm's key is its name upper-cased, with punctuation removed, "LTD" spelt out, "Public Limited Company" shortened to "PLC" and legal suffixes (Limited, PLC, SA, SE...) removed.
 - If two different names share a key in the same release, both keep their full names as keys, so two genuinely different firms are never merged (for example "Ikano Bank" and "Ikano Bank AB (publ)" in the same release).
 - From 2023 H1 the FCA's trading-names sheet gives each firm's reference number (FRN). Where one FRN appears under two names, the firm was renamed; all its rows take the key of the most recent name. This joins, for example, Advanced Payment Solutions and Zempler Bank.
+- The name shown for a firm is its latest published name. Where that was published in capitals and an earlier release spelt the same name in mixed case, the mixed-case spelling is shown (only spellings of the latest name are considered, so renames are not undone).
 
 ## Linking FCA firms to Ombudsman businesses
 
