@@ -1,0 +1,29 @@
+# All settings in one place. The SQL Server connection can be overridden with
+# environment variables (see README); nothing secret is stored here.
+
+[scope]
+# The FCA changed its complaints return on 30 June 2016. Figures before 2016 H2
+# use different product groups and exclude complaints closed within three days,
+# so they are not comparable and are left out.
+first_period = "2016 H2"
+
+[paths]
+raw = "data/raw"
+processed = "data/processed"
+reference = "data/reference"
+outputs = "outputs"
+
+[warehouse]
+server = "localhost\\SQLEXPRESS"
+database = "ComplaintsMonitor"
+
+[matching]
+# Score (0-100) at or above which a pair of names is offered for review.
+review_threshold = 80
+
+[analysis]
+# Firms with fewer closed complaints than this are left out of rate comparisons.
+min_closed = 100
+# A firm's FCA reporting period must overlap an Ombudsman period by at least
+# this share of the Ombudsman period to be compared with it.
+min_overlap_share = 0.75

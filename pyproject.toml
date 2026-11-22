@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "complaints-monitor"
+version = "0.1.0"
+description = "UK Financial Complaints Monitor: FCA and Financial Ombudsman complaints data, modelled in SQL Server and reported in Power BI."
+readme = "README.md"
+requires-python = ">=3.12"
+license = "MIT"
+authors = [{ name = "Munesh Kumar" }]
+dependencies = [
+    "pandas>=2.2",
+    "numpy>=2.0",
+    "openpyxl>=3.1",
+    "rapidfuzz>=3.9",
+    "matplotlib>=3.9",
+    "pyodbc>=5.2",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.3", "ruff>=0.8"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+markers = ["sqlserver: needs a running SQL Server (set COMPLAINTS_SQL_SERVER)"]
+
+[tool.ruff]
+line-length = 110
+target-version = "py312"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "SIM"]

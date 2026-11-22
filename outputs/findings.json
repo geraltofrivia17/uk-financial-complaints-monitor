@@ -1,0 +1,546 @@
+{
+  "latest_fca_period": "2026 H1",
+  "first_period": "2016 H2",
+  "opened_latest": 1851357,
+  "opened_year_ago": 1828546,
+  "uphold_rate_latest": 0.5474909034537946,
+  "uphold_rate_year_ago": 0.5788332373824602,
+  "share_closed_3d_latest": 0.44745455001981427,
+  "share_closed_over_8w_latest": 0.05520318076171907,
+  "redress_latest": 239989735,
+  "peak_period": "2019 H2",
+  "opened_peak": 6106969,
+  "redress_peak_period": "2019 H2",
+  "redress_peak": 2755182910,
+  "by_product_latest": {
+    "Banking and credit cards": {
+      "opened": 898877,
+      "uphold_rate": 0.5285500067957639,
+      "share_closed_3d": 0.4973607926757262
+    },
+    "Decumulation & pensions": {
+      "opened": 88701,
+      "uphold_rate": 0.7043983057693861,
+      "share_closed_3d": 0.2146987200941752
+    },
+    "Investments": {
+      "opened": 67935,
+      "uphold_rate": 0.5109693917328053,
+      "share_closed_3d": 0.25585891818564543
+    },
+    "Insurance & pure protection": {
+      "opened": 722974,
+      "uphold_rate": 0.5554389641809729,
+      "share_closed_3d": 0.43913859916870035
+    },
+    "Home finance": {
+      "opened": 72870,
+      "uphold_rate": 0.5488366973486881,
+      "share_closed_3d": 0.3589934095568305
+    }
+  },
+  "concentration": {
+    "period": "2026 H1",
+    "firms": 226,
+    "top10_share": 0.47828273890978695,
+    "top10": {
+      "LLOYDS BANK": 118762,
+      "NATIONWIDE BUILDING SOCIETY": 100886,
+      "NATIONAL WESTMINSTER BANK": 92548,
+      "BANK OF SCOTLAND": 91326,
+      "BARCLAYS BANK UK": 90678,
+      "HSBC UK BANK": 79323,
+      "DOMESTIC AND GENERAL INSURANCE": 72314,
+      "MONZO BANK": 67790,
+      "EUI": 65577,
+      "SANTANDER UK": 61365
+    }
+  },
+  "funnel": {
+    "firm_groups_compared": 300,
+    "outside_998_binomial": 243,
+    "outside_998_adjusted": 41,
+    "above_998_adjusted": 4,
+    "below_998_adjusted": 37,
+    "above_998_adjusted_firms": [
+      {
+        "firm_id": "BRITISH GAS SERVICES",
+        "firm_name_latest": "British Gas Services Limited",
+        "product_group": "Insurance & pure protection",
+        "closed": 48455.0,
+        "uphold_rate": 0.9354039830770818,
+        "pooled_rate": 0.5673244089012517
+      },
+      {
+        "firm_id": "CYNERGY BANK",
+        "firm_name_latest": "Cynergy Bank Plc",
+        "product_group": "Banking and credit cards",
+        "closed": 520.0,
+        "uphold_rate": 0.7692307692307693,
+        "pooled_rate": 0.5299351952926187
+      },
+      {
+        "firm_id": "PRUDENTIAL ASSURANCE COMPANY",
+        "firm_name_latest": "The Prudential Assurance Company Limited",
+        "product_group": "Insurance & pure protection",
+        "closed": 527.0,
+        "uphold_rate": 0.905123339658444,
+        "pooled_rate": 0.5673244089012517
+      },
+      {
+        "firm_id": "YORKSHIRE BUILDING SOCIETY",
+        "firm_name_latest": "Yorkshire Building Society",
+        "product_group": "Banking and credit cards",
+        "closed": 2072.0,
+        "uphold_rate": 0.7664092664092664,
+        "pooled_rate": 0.5299351952926187
+      }
+    ],
+    "below_998_adjusted_firms": [
+      {
+        "firm_id": "ADRIAN FLUX INSURANCE SERVICES GROUP",
+        "firm_name_latest": "Adrian Flux Insurance Services Group",
+        "product_group": "Insurance & pure protection",
+        "closed": 2421.0,
+        "uphold_rate": 0.20693928128872366,
+        "pooled_rate": 0.5673244089012517
+      },
+      {
+        "firm_id": "AMERICAN EXPRESS SERVICES EUROPE",
+        "firm_name_latest": "AMERICAN EXPRESS SERVICES EUROPE LIMITED",
+        "product_group": "Banking and credit cards",
+        "closed": 19810.0,
+        "uphold_rate": 0.3177183240787481,
+        "pooled_rate": 0.5299351952926187
+      },
+      {
+        "firm_id": "AMERICAN EXPRESS SERVICES EUROPE",
+        "firm_name_latest": "AMERICAN EXPRESS SERVICES EUROPE LIMITED",
+        "product_group": "Insurance & pure protection",
+        "closed": 209.0,
+        "uphold_rate": 0.11483253588516747,
+        "pooled_rate": 0.5673244089012517
+      },
+      {
+        "firm_id": "ASURION EUROPE",
+        "firm_name_latest": "Asurion Europe Limited",
+        "product_group": "Insurance & pure protection",
+        "closed": 1235.0,
+        "uphold_rate": 0.20080971659919028,
+        "pooled_rate": 0.5673244089012517
+      },
+      {
+        "firm_id": "BANK OF IRELAND UK",
+        "firm_name_latest": "Bank of Ireland (UK) Plc",
+        "product_group": "Home finance",
+        "closed": 754.0,
+        "uphold_rate": 0.2692307692307692,
+        "pooled_rate": 0.5659767543041829
+      },
+      {
+        "firm_id": "BANK OF SCOTLAND",
+        "firm_name_latest": "Bank of Scotland plc",
+        "product_group": "Insurance & pure protection",
+        "closed": 216.0,
+        "uphold_rate": 0.1574074074074074,
+        "pooled_rate": 0.5673244089012517
+      },
+      {
+        "firm_id": "BARCLAYS BANK UK",
+        "firm_name_latest": "Barclays Bank UK PLC",
+        "product_group": "Insurance & pure protection",
+        "closed": 269.0,
+        "uphold_rate": 0.15613382899628253,
+        "pooled_rate": 0.5673244089012517
+      },
+      {
+        "firm_id": "CAR CARE PLAN",
+        "firm_name_latest": "Car Care Plan Limited",
+        "product_group": "Insurance & pure protection",
+        "closed": 901.0,
+        "uphold_rate": 0.20754716981132076,
+        "pooled_rate": 0.5673244089012517
+      },
+      {
+        "firm_id": "DIGITAL MONEYBOX",
+        "firm_name_latest": "Digital Moneybox Limited",
+        "product_group": "Banking and credit cards",
+        "closed": 503.0,
+        "uphold_rate": 0.2882703777335984,
+        "pooled_rate": 0.5299351952926187
+      },
+      {
+        "firm_id": "ETORO UK",
+        "firm_name_latest": "ETORO (UK) LIMITED",
+        "product_group": "Investments",
+        "closed": 620.0,
+        "uphold_rate": 0.02258064516129032,
+        "pooled_rate": 0.517342582710779
+      },
+      {
+        "firm_id": "EXETER FRIENDLY SOCIETY",
+        "firm_name_latest": "Exeter Friendly Society Limited",
+        "product_group": "Insurance & pure protection",
+        "closed": 1219.0,
+        "uphold_rate": 0.05004101722723544,
+        "pooled_rate": 0.5673244089012517
+      },
+      {
+        "firm_id": "FAMILY EQUITY PLAN",
+        "firm_name_latest": "Family Equity Plan Limited",
+        "product_group": "Banking and credit cards",
+        "closed": 676.0,
+        "uphold_rate": 0.28846153846153844,
+        "pooled_rate": 0.5299351952926187
+      },
+      {
+        "firm_id": "HOMESERVE MEMBERSHIP",
+        "firm_name_latest": "Homeserve Membership Limited",
+        "product_group": "Insurance & pure protection",
+        "closed": 2327.0,
+        "uphold_rate": 0.21572840567253976,
+        "pooled_rate": 0.5673244089012517
+      },
+      {
+        "firm_id": "HOOD TRAVEL",
+        "firm_name_latest": "Hood Travel Limited",
+        "product_group": "Insurance & pure protection",
+        "closed": 888.0,
+        "uphold_rate": 0.17792792792792791,
+        "pooled_rate": 0.5673244089012517
+      },
+      {
+        "firm_id": "KROO BANK",
+        "firm_name_latest": "Kroo Bank Ltd",
+        "product_group": "Banking and credit cards",
+        "closed": 764.0,
+        "uphold_rate": 0.25785340314136124,
+        "pooled_rate": 0.5299351952926187
+      },
+      {
+        "firm_id": "LENVI SERVICING",
+        "firm_name_latest": "Lenvi Servicing Limited",
+        "product_group": "Home finance",
+        "closed": 427.0,
+        "uphold_rate": 0.2388758782201405,
+        "pooled_rate": 0.5659767543041829
+      },
+      {
+        "firm_id": "LEXHAM INSURANCE CONSULTANTS",
+        "firm_name_latest": "Lexham Insurance Consultants Limited",
+        "product_group": "Insurance & pure protection",
+        "closed": 717.0,
+        "uphold_rate": 0.19246861924686193,
+        "pooled_rate": 0.5673244089012517
+      },
+      {
+        "firm_id": "LLOYDS BANK",
+        "firm_name_latest": "Lloyds Bank PLC",
+        "product_group": "Insurance & pure protection",
+        "closed": 324.0,
+        "uphold_rate": 0.11419753086419752,
+        "pooled_rate": 0.5673244089012517
+      },
+      {
+        "firm_id": "MONZO BANK",
+        "firm_name_latest": "MONZO BANK LIMITED",
+        "product_group": "Banking and credit cards",
+        "closed": 70687.0,
+        "uphold_rate": 0.2397046132952311,
+        "pooled_rate": 0.5299351952926187
+      },
+      {
+        "firm_id": "MUNICH RE DIGITAL PARTNERS",
+        "firm_name_latest": "MUNICH RE DIGITAL PARTNERS LIMITED",
+        "product_group": "Insurance & pure protection",
+        "closed": 2338.0,
+        "uphold_rate": 0.05089820359281437,
+        "pooled_rate": 0.5673244089012517
+      },
+      {
+        "firm_id": "ONE CALL INSURANCE SERVICES",
+        "firm_name_latest": "One Call Insurance Services Limited",
+        "product_group": "Insurance & pure protection",
+        "closed": 1924.0,
+        "uphold_rate": 0.21621621621621623,
+        "pooled_rate": 0.5673244089012517
+      },
+      {
+        "firm_id": "ONE SURE INSURANCE",
+        "firm_name_latest": "One Sure Insurance Limited",
+        "product_group": "Insurance & pure protection",
+        "closed": 738.0,
+        "uphold_rate": 0.26287262872628725,
+        "pooled_rate": 0.5673244089012517
+      },
+      {
+        "firm_id": "PRIMA SUBSIDIARY",
+        "firm_name_latest": "PRIMA SUBSIDIARY LTD",
+        "product_group": "Insurance & pure protection",
+        "closed": 386.0,
+        "uphold_rate": 0.23056994818652848,
+        "pooled_rate": 0.5673244089012517
+      },
+      {
+        "firm_id": "RAC FINANCIAL SERVICES",
+        "firm_name_latest": "RAC FINANCIAL SERVICES LIMITED",
+        "product_group": "Insurance & pure protection",
+        "closed": 13445.0,
+        "uphold_rate": 0.22342878393454815,
+        "pooled_rate": 0.5673244089012517
+      },
+      {
+        "firm_id": "RESOLVECALL",
+        "firm_name_latest": "RESOLVECALL LIMITED",
+        "product_group": "Banking and credit cards",
+        "closed": 542.0,
+        "uphold_rate": 0.02952029520295203,
+        "pooled_rate": 0.5299351952926187
+      },
+      {
+        "firm_id": "REVOLUT BANK UK",
+        "firm_name_latest": "Revolut Bank UK Ltd",
+        "product_group": "Banking and credit cards",
+        "closed": 928.0,
+        "uphold_rate": 0.12823275862068967,
+        "pooled_rate": 0.5299351952926187
+      },
+      {
+        "firm_id": "ROTHESAY LIFE",
+        "firm_name_latest": "Rothesay Life Plc",
+        "product_group": "Decumulation & pensions",
+        "closed": 542.0,
+        "uphold_rate": 0.3025830258302583,
+        "pooled_rate": 0.7163322313625996
+      },
+      {
+        "firm_id": "SECURE TRUST BANK",
+        "firm_name_latest": "SECURE TRUST BANK PUBLIC LIMITED COMPANY",
+        "product_group": "Banking and credit cards",
+        "closed": 334.0,
+        "uphold_rate": 0.30538922155688625,
+        "pooled_rate": 0.5299351952926187
+      },
+      {
+        "firm_id": "SHOP DIRECT FINANCE COMPANY",
+        "firm_name_latest": "Shop Direct Finance Company Limited",
+        "product_group": "Insurance & pure protection",
+        "closed": 106.0,
+        "uphold_rate": 0.2358490566037736,
+        "pooled_rate": 0.5673244089012517
+      },
+      {
+        "firm_id": "ST JAMESS PLACE WEALTH MANAGEMENT",
+        "firm_name_latest": "St. James's Place Wealth Management Plc",
+        "product_group": "Decumulation & pensions",
+        "closed": 2293.0,
+        "uphold_rate": 0.36066288704753596,
+        "pooled_rate": 0.7163322313625996
+      },
+      {
+        "firm_id": "ST JAMESS PLACE WEALTH MANAGEMENT",
+        "firm_name_latest": "St. James's Place Wealth Management Plc",
+        "product_group": "Insurance & pure protection",
+        "closed": 138.0,
+        "uphold_rate": 0.09420289855072464,
+        "pooled_rate": 0.5673244089012517
+      },
+      {
+        "firm_id": "SWIFT 1ST",
+        "firm_name_latest": "Swift 1st Limited",
+        "product_group": "Home finance",
+        "closed": 522.0,
+        "uphold_rate": 0.09578544061302682,
+        "pooled_rate": 0.5659767543041829
+      },
+      {
+        "firm_id": "TRADING 212 UK",
+        "firm_name_latest": "Trading 212 UK Limited",
+        "product_group": "Banking and credit cards",
+        "closed": 954.0,
+        "uphold_rate": 0.18763102725366876,
+        "pooled_rate": 0.5299351952926187
+      },
+      {
+        "firm_id": "TRUE POTENTIAL WEALTH MANAGEMENT",
+        "firm_name_latest": "True Potential Wealth Management LLP",
+        "product_group": "Decumulation & pensions",
+        "closed": 588.0,
+        "uphold_rate": 0.2687074829931973,
+        "pooled_rate": 0.7163322313625996
+      },
+      {
+        "firm_id": "US BANK EUROPE",
+        "firm_name_latest": "U.S. Bank Europe DAC",
+        "product_group": "Banking and credit cards",
+        "closed": 1519.0,
+        "uphold_rate": 0.12705727452271232,
+        "pooled_rate": 0.5299351952926187
+      },
+      {
+        "firm_id": "USAY BUSINESS",
+        "firm_name_latest": "USAY BUSINESS LTD",
+        "product_group": "Insurance & pure protection",
+        "closed": 590.0,
+        "uphold_rate": 0.23220338983050848,
+        "pooled_rate": 0.5673244089012517
+      },
+      {
+        "firm_id": "VANQUIS BANK",
+        "firm_name_latest": "Vanquis Bank Limited",
+        "product_group": "Banking and credit cards",
+        "closed": 10995.0,
+        "uphold_rate": 0.3025011368804002,
+        "pooled_rate": 0.5299351952926187
+      }
+    ],
+    "by_group": {
+      "Banking and credit cards": {
+        "Above 95% limit": 6,
+        "Above 99.8% limit": 2,
+        "Below 95% limit": 7,
+        "Below 99.8% limit": 11,
+        "Within limits": 28
+      },
+      "Decumulation & pensions": {
+        "Above 95% limit": 3,
+        "Above 99.8% limit": 0,
+        "Below 95% limit": 5,
+        "Below 99.8% limit": 3,
+        "Within limits": 24
+      },
+      "Home finance": {
+        "Above 95% limit": 1,
+        "Above 99.8% limit": 0,
+        "Below 95% limit": 3,
+        "Below 99.8% limit": 3,
+        "Within limits": 30
+      },
+      "Insurance & pure protection": {
+        "Above 95% limit": 7,
+        "Above 99.8% limit": 2,
+        "Below 95% limit": 17,
+        "Below 99.8% limit": 19,
+        "Within limits": 81
+      },
+      "Investments": {
+        "Above 95% limit": 8,
+        "Above 99.8% limit": 0,
+        "Below 95% limit": 3,
+        "Below 99.8% limit": 1,
+        "Within limits": 36
+      }
+    }
+  },
+  "fca_vs_ombudsman": {
+    "fos_period": "2025 H1",
+    "pairs": 110,
+    "pairs_with_100_cases": 65,
+    "fos_rate_case_weighted": 0.3197219588365789,
+    "fca_rate_case_weighted": 0.5233282227492956,
+    "share_pairs_fos_higher": 0.10909090909090909,
+    "correlation_fca_fos": 0.22913373989419908,
+    "largest_gaps": [
+      {
+        "firm_id": "CASUALTY AND GENERAL INSURANCE COMPANY EUROPE",
+        "firm_name_latest": "Casualty & General Insurance Company (Europe) Ltd",
+        "product_group": "Insurance & pure protection",
+        "fca_uphold_rate": 0.2571,
+        "fos_uphold_rate": 0.75,
+        "fos_new_cases": 193.0,
+        "fca_period": "2025 H1",
+        "fos_period": "2025 H1"
+      },
+      {
+        "firm_id": "CLOSE BROTHERS",
+        "firm_name_latest": "Close Brothers Limited",
+        "product_group": "Banking and credit cards",
+        "fca_uphold_rate": 0.0,
+        "fos_uphold_rate": 0.2763157895,
+        "fos_new_cases": 1104.0,
+        "fca_period": "2025 H2",
+        "fos_period": "2025 H1"
+      },
+      {
+        "firm_id": "KROO BANK",
+        "firm_name_latest": "Kroo Bank Ltd",
+        "product_group": "Banking and credit cards",
+        "fca_uphold_rate": 0.2968,
+        "fos_uphold_rate": 0.4876033058,
+        "fos_new_cases": 104.0,
+        "fca_period": "2025 H1",
+        "fos_period": "2025 H1"
+      },
+      {
+        "firm_id": "TRADING 212 UK",
+        "firm_name_latest": "Trading 212 UK Limited",
+        "product_group": "Investments",
+        "fca_uphold_rate": 0.1552,
+        "fos_uphold_rate": 0.275,
+        "fos_new_cases": 144.0,
+        "fca_period": "2025 H1",
+        "fos_period": "2025 H1"
+      },
+      {
+        "firm_id": "VANQUIS BANK",
+        "firm_name_latest": "Vanquis Bank Limited",
+        "product_group": "Banking and credit cards",
+        "fca_uphold_rate": 0.1654,
+        "fos_uphold_rate": 0.281499004,
+        "fos_new_cases": 5859.0,
+        "fca_period": "2025 H1",
+        "fos_period": "2025 H1"
+      },
+      {
+        "firm_id": "LINK FINANCIAL OUTSOURCING",
+        "firm_name_latest": "Link Financial Outsourcing Limited",
+        "product_group": "Banking and credit cards",
+        "fca_uphold_rate": 0.25,
+        "fos_uphold_rate": 0.3405797101,
+        "fos_new_cases": 208.0,
+        "fca_period": "2025 H1",
+        "fos_period": "2025 H1"
+      },
+      {
+        "firm_id": "AWP P AND C",
+        "firm_name_latest": "AWP P&C S.A.",
+        "product_group": "Insurance & pure protection",
+        "fca_uphold_rate": 0.3407,
+        "fos_uphold_rate": 0.368852459,
+        "fos_new_cases": 274.0,
+        "fca_period": "2025 H1",
+        "fos_period": "2025 H1"
+      },
+      {
+        "firm_id": "CREATION CONSUMER FINANCE",
+        "firm_name_latest": "CREATION CONSUMER FINANCE LIMITED",
+        "product_group": "Banking and credit cards",
+        "fca_uphold_rate": 0.3988,
+        "fos_uphold_rate": 0.4143835616,
+        "fos_new_cases": 572.0,
+        "fca_period": "2025 H1",
+        "fos_period": "2025 H1"
+      }
+    ],
+    "periods_compared": [
+      "2016 H2",
+      "2017 H1",
+      "2017 H2",
+      "2018 H1",
+      "2018 H2",
+      "2019 H1",
+      "2019 H2",
+      "2020 H1",
+      "2020 H2",
+      "2021 H1",
+      "2021 H2",
+      "2022 H1",
+      "2022 H2",
+      "2023 H1",
+      "2023 H2",
+      "2024 H1",
+      "2024 H2",
+      "2025 H1"
+    ]
+  }
+}

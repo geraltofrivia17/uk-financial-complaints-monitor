@@ -1,0 +1,67 @@
+/// Firms in the FCA's firm-level complaints data, identified across renames.
+table Firm
+	lineageTag: be367414-85a4-5259-8b58-ca864374b643
+
+	column firm_id
+		dataType: string
+		isHidden
+		lineageTag: d543d34c-457b-5314-afc6-3abafb38934e
+		summarizeBy: none
+		sourceColumn: firm_id
+
+	column Firm
+		dataType: string
+		lineageTag: 2500cbbd-0157-5e30-a984-2ce18a528d92
+		summarizeBy: none
+		sourceColumn: firm_name_latest
+
+	column 'Firm group'
+		dataType: string
+		lineageTag: 6f253702-5602-53a5-a50b-c99bff87979a
+		summarizeBy: none
+		sourceColumn: firm_group_latest
+
+	column FRN
+		dataType: int64
+		formatString: 0
+		lineageTag: 8595de8a-0baa-58fe-bd0c-2f5469fd0cba
+		summarizeBy: none
+		sourceColumn: frn
+
+	column 'First half-year'
+		dataType: string
+		lineageTag: 569ad8c6-6c69-501b-b93f-1b42d8bb8dcf
+		summarizeBy: none
+		sourceColumn: first_period
+
+	column 'Last half-year'
+		dataType: string
+		lineageTag: dc52c97c-c6fd-596c-9cda-96bb85ffd1c3
+		summarizeBy: none
+		sourceColumn: last_period
+
+	column 'Half-years reported'
+		dataType: int64
+		formatString: 0
+		lineageTag: 69ac1c00-4800-55b0-b75d-9661f4e0209f
+		summarizeBy: none
+		sourceColumn: periods_reported
+
+	column names_used
+		dataType: int64
+		formatString: 0
+		lineageTag: e5846a47-01f8-47aa-b66e-68c4714b51dc
+		summarizeBy: sum
+		sourceColumn: names_used
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Firm = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database(SqlServer, SqlDatabase),
+				    Data = Source{[Schema="dw", Item="dim_firm"]}[Data]
+				in
+				    Data
+

@@ -1,0 +1,48 @@
+relationship 4a67cc1f-26fe-5582-b473-05dcee4f8dbd
+	fromColumn: Market.period_label
+	toColumn: Period.Half-year
+
+relationship 97c7b17f-0cde-5dda-98eb-33d7a41de703
+	fromColumn: Market.product_group
+	toColumn: 'Product group'.'Product group'
+
+relationship c9d8e869-1203-524b-a29d-0b9c178e5204
+	fromColumn: 'Firm half-year'.period_label
+	toColumn: Period.Half-year
+
+relationship d1e11226-accf-58fe-b3c1-b697aaa00798
+	fromColumn: 'Firm half-year'.product_group
+	toColumn: 'Product group'.'Product group'
+
+relationship 79cd915e-4ef0-56b9-b80d-1e92d3365f39
+	fromColumn: 'Firm half-year'.firm_id
+	toColumn: Firm.firm_id
+
+relationship 3c9bf54e-565c-578b-8e72-5d1188cef148
+	fromColumn: 'Firm funnel'.period_label
+	toColumn: Period.Half-year
+
+relationship f98c3871-72d0-59ab-841a-121bbb30dab2
+	fromColumn: 'Firm funnel'.product_group
+	toColumn: 'Product group'.'Product group'
+
+relationship fb6a4b41-a6be-56c8-a4ff-39dd8d2fbb7e
+	fromColumn: 'Firm funnel'.firm_id
+	toColumn: Firm.firm_id
+
+relationship aa300f6b-5148-51c9-af2e-8e85fb3161ed
+	fromColumn: 'Firm vs Ombudsman'.product_group
+	toColumn: 'Product group'.'Product group'
+
+relationship 099995a8-c661-5c40-95f4-be23a8f8b0d9
+	fromColumn: 'Firm vs Ombudsman'.firm_id
+	toColumn: Firm.firm_id
+
+relationship 3e8e4f6b-b69d-5913-8ccf-2377fd549317
+	fromColumn: Coverage.period_label
+	toColumn: Period.Half-year
+
+relationship af00f78c-b717-5a2a-a2a8-bd35b1926da5
+	fromColumn: Coverage.product_group
+	toColumn: 'Product group'.'Product group'
+

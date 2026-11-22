@@ -1,0 +1,169 @@
+/// One row per firm, product group and firm reporting period (FCA firm-level data).
+table 'Firm half-year'
+	lineageTag: 60ae8d1a-ebdb-550a-8b2f-40a79beb91d0
+
+	column period_label
+		dataType: string
+		isHidden
+		lineageTag: 8c72f895-483d-59ce-934c-1b9d6a4b1d41
+		summarizeBy: none
+		sourceColumn: period_label
+
+	column product_group
+		dataType: string
+		isHidden
+		lineageTag: 04c56bb0-6ca7-55dc-afca-da8404e2540c
+		summarizeBy: none
+		sourceColumn: product_group
+
+	column firm_id
+		dataType: string
+		isHidden
+		lineageTag: 8834273f-cb78-580e-9d00-a7530244dc0f
+		summarizeBy: none
+		sourceColumn: firm_id
+
+	column 'Name as published'
+		dataType: string
+		lineageTag: 823ad7b1-48f5-5302-9834-86d86a38b513
+		summarizeBy: none
+		sourceColumn: firm_name
+
+	column 'Reporting start'
+		dataType: dateTime
+		formatString: dd mmm yyyy
+		lineageTag: 0893affb-6ca8-5301-bf1f-05ac1685df9f
+		summarizeBy: none
+		sourceColumn: reporting_start
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Reporting end'
+		dataType: dateTime
+		formatString: dd mmm yyyy
+		lineageTag: 8f0bccc7-6117-5978-a24e-1f82b2e087c5
+		summarizeBy: none
+		sourceColumn: reporting_end
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column opened
+		dataType: int64
+		isHidden
+		formatString: #,0
+		lineageTag: 4fb061a7-ec43-5230-a45d-56a46494f2c0
+		summarizeBy: sum
+		sourceColumn: opened
+
+	column closed
+		dataType: int64
+		isHidden
+		formatString: #,0
+		lineageTag: e0d3cc8b-9fe0-54b9-924d-2d56bf821c7f
+		summarizeBy: sum
+		sourceColumn: closed
+
+	column upheld_derived
+		dataType: int64
+		isHidden
+		formatString: #,0
+		lineageTag: f4f07a43-945b-5cde-8fa4-3887ed53f3ff
+		summarizeBy: sum
+		sourceColumn: upheld_derived
+
+	column closed_3d_derived
+		dataType: int64
+		isHidden
+		formatString: #,0
+		lineageTag: ebbb423e-5f29-571c-bef5-c4673596fa5e
+		summarizeBy: sum
+		sourceColumn: closed_3d_derived
+
+	column 'Firm uphold rate (published)'
+		dataType: double
+		isHidden
+		formatString: 0.0%
+		lineageTag: 8a3504cf-d611-569a-87d5-4e03f7b7ec92
+		summarizeBy: none
+		sourceColumn: pct_upheld
+
+	column 'Complaints per 1,000 held'
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 9daf5379-3f5f-54fa-82af-3a07c7c1cee3
+		summarizeBy: none
+		sourceColumn: context_provision
+
+	column firm_group
+		dataType: string
+		lineageTag: 4556467b-b4cf-4f63-a988-cbaa89159c1d
+		summarizeBy: none
+		sourceColumn: firm_group
+
+		annotation SummarizationSetBy = Automatic
+
+	column joint_report
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 79260ba6-4d3f-44b5-be14-2146bf1fc56f
+		summarizeBy: none
+		sourceColumn: joint_report
+
+		annotation SummarizationSetBy = Automatic
+
+	column reporting_months
+		dataType: int64
+		formatString: 0
+		lineageTag: 5b01cbef-9845-4370-8596-62d939df1f4a
+		summarizeBy: sum
+		sourceColumn: reporting_months
+
+		annotation SummarizationSetBy = Automatic
+
+	column pct_closed_3d
+		dataType: double
+		lineageTag: 379291ef-5f4d-474d-8cdb-7ee2395dc72f
+		summarizeBy: sum
+		sourceColumn: pct_closed_3d
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column pct_closed_3d_8w
+		dataType: double
+		lineageTag: 09c58c21-efdf-4676-b662-1d20adfc0d71
+		summarizeBy: sum
+		sourceColumn: pct_closed_3d_8w
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column context_intermediation
+		dataType: double
+		lineageTag: 4984bf15-571b-4692-9ec5-c70508fc7cd3
+		summarizeBy: sum
+		sourceColumn: context_intermediation
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column source_file
+		dataType: string
+		lineageTag: 3fa0198d-5e62-461f-aa37-4f3453746671
+		summarizeBy: none
+		sourceColumn: source_file
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Firm half-year' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database(SqlServer, SqlDatabase),
+				    Data = Source{[Schema="dw", Item="fact_fca_firm_product"]}[Data]
+				in
+				    Data
+

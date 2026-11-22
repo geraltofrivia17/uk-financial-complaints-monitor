@@ -1,0 +1,152 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 1310.2323794955378,
+            "y": 364.72877269809828
+          },
+          "nodeIndex": "Key measures",
+          "nodeLineageTag": "7328f228-e340-59c6-ae22-fed96f678f22",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1076.2323794955375,
+            "y": 453.29096775519611
+          },
+          "nodeIndex": "Coverage",
+          "nodeLineageTag": "fa798083-610c-5578-a862-6d282e4dc6f0",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1594.2323794955378,
+            "y": 414.72877269809828
+          },
+          "nodeIndex": "Data quality",
+          "nodeLineageTag": "24872f93-33c0-5b8b-9aa3-4d8469da0d52",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 50,
+            "y": 323.87815448505125
+          },
+          "nodeIndex": "Firm",
+          "nodeLineageTag": "be367414-85a4-5259-8b58-ca864374b643",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 509.40687094557495,
+            "y": -50
+          },
+          "nodeIndex": "Firm funnel",
+          "nodeLineageTag": "e429f015-63af-5095-96ed-9061c3f91ab6",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 377.12052976593691,
+            "y": 300.13629494736369
+          },
+          "nodeIndex": "Firm half-year",
+          "nodeLineageTag": "60ae8d1a-ebdb-550a-8b2f-40a79beb91d0",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 92.981273686085387,
+            "y": 622.08789009083625
+          },
+          "nodeIndex": "Firm vs Ombudsman",
+          "nodeLineageTag": "a8866e3b-96a4-5230-9309-93badcae0512",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 945.42819376081366,
+            "y": 679.45754539619691
+          },
+          "nodeIndex": "Market",
+          "nodeLineageTag": "965b6f4c-b201-530b-b22e-f3cc49f0a9af",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 793.588361136184,
+            "y": 167.71646836830973
+          },
+          "nodeIndex": "Period",
+          "nodeLineageTag": "53f9f4f3-63d8-5e29-bd6d-18e622b40c71",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 661.25225926641008,
+            "y": 609.09796446933581
+          },
+          "nodeIndex": "Product group",
+          "nodeLineageTag": "35877d16-810f-5ddd-9758-97929cd7ec02",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

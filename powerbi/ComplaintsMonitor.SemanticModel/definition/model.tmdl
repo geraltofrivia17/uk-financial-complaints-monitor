@@ -1,0 +1,29 @@
+model Model
+	culture: en-GB
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	discourageImplicitMeasures
+	sourceQueryCulture: en-GB
+	valueFilterBehavior: independent
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_ProTooling = ["DevMode"]
+
+annotation PBI_QueryOrder = ["Period","Product group","Firm","Market","Firm half-year","Firm funnel","Firm vs Ombudsman","Coverage","Data quality","SqlServer","SqlDatabase"]
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+ref table 'Key measures'
+ref table Period
+ref table 'Product group'
+ref table Firm
+ref table Market
+ref table 'Firm half-year'
+ref table 'Firm funnel'
+ref table 'Firm vs Ombudsman'
+ref table Coverage
+ref table 'Data quality'
+
+ref cultureInfo en-GB
+

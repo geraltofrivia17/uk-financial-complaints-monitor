@@ -1,0 +1,81 @@
+/// FCA publication half-years. Firms report on their own half-years; see Firm half-year.
+table Period
+	lineageTag: 53f9f4f3-63d8-5e29-bd6d-18e622b40c71
+
+	column Half-year
+		dataType: string
+		lineageTag: 79d92758-52fc-5394-b4e3-f6a7096a781f
+		summarizeBy: none
+		sourceColumn: period_label
+		sortByColumn: 'Period order'
+
+	column 'Period order'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 04c4d9b7-8c4a-5a24-83e1-315c67ba1736
+		summarizeBy: none
+		sourceColumn: period_order
+
+	column 'Start date'
+		dataType: dateTime
+		formatString: dd mmm yyyy
+		lineageTag: 3fcd8c7d-2f89-5241-9e80-4f59c918239d
+		summarizeBy: none
+		sourceColumn: start_date
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'End date'
+		dataType: dateTime
+		formatString: dd mmm yyyy
+		lineageTag: 13d2d04a-7db5-5bd5-b3cd-f277c8eebfda
+		summarizeBy: none
+		sourceColumn: end_date
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column source
+		dataType: string
+		lineageTag: b0026cf5-92cb-4503-bbd1-99a6a5204c40
+		summarizeBy: none
+		sourceColumn: source
+
+		annotation SummarizationSetBy = Automatic
+
+	column months
+		dataType: int64
+		formatString: 0
+		lineageTag: aee37b2c-e112-4c65-9b24-51c3720b9a04
+		summarizeBy: sum
+		sourceColumn: months
+
+		annotation SummarizationSetBy = Automatic
+
+	column min_threshold
+		dataType: int64
+		formatString: 0
+		lineageTag: 67d6e367-9093-42d1-bade-bdff3bfd54eb
+		summarizeBy: sum
+		sourceColumn: min_threshold
+
+		annotation SummarizationSetBy = Automatic
+
+	column note
+		dataType: string
+		lineageTag: 30daefc3-32cc-4156-9358-9f6e4a33d016
+		summarizeBy: none
+		sourceColumn: note
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Period = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database(SqlServer, SqlDatabase),
+				    Data = Source{[Schema="dw", Item="dim_period"]}[Data],
+				    Filtered = Table.SelectRows(Data, each [source] = "FCA")
+				in
+				    Filtered
+

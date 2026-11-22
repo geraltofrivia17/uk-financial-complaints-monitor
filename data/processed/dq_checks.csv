@@ -1,0 +1,17 @@
+check,status,actual,expected,detail
+FCA firm-product rows are unique,pass,0,0,
+Every FCA release from the first period in scope is present,pass,20,"20 half-years, 2016 H2 to 2026 H1",
+pct_closed_3d lies between 0 and 1,pass,0,0 rows outside,
+pct_closed_3d_8w lies between 0 and 1,pass,0,0 rows outside,
+pct_upheld lies between 0 and 1,pass,0,0 rows outside,
+Closed within 3 days plus 3 days to 8 weeks is at most 100%,pass,0,0 rows above 100.5% after cleaning,5 published rows added up to more than 100% and were set aside (see issues.csv)
+No upheld rate without a closed count,pass,0,0,
+Every firm row has a reporting period,pass,0,0 missing,
+Firm reporting periods are six months (or twelve for annual reporters),pass,"{""6"": 8132, ""7"": 1}",lengths of 6 or 12 months,
+Firm-level complaints are a large but partial share of the market total,pass,91.5% to 104.2%,between 80% and 105% in every half-year,"The firm tables cover firms above the publication threshold, on their own reporting dates"
+Upheld complaints derived from firm rates track the market total,pass,93.6% to 102.5%,between 75% and 110% in every half-year,Firm-level upheld counts are derived: rate x closed
+Market closed equals the sum of its three timeliness bands,pass,0.0,0,
+Ombudsman new cases add up to the published total of listed businesses,warn,11 of 17 periods match exactly,all periods that publish a total,"2017 H1: +47454; 2018 H1: -22; 2020 H2: -29; 2021 H1: -35; 2021 H2: -9317; 2024 H2: -53. The differences are in the published files: total rows that do not equal their own business rows, and businesses listed twice (see issues.csv)"
+Ombudsman uphold rates lie between 0 and 1,pass,0,0 rows outside,
+Share of Ombudsman new cases linked to an FCA-listed firm,pass,83.9%,at least 75%,Unlinked businesses are mostly below the FCA's firm-level publication threshold
+Every close name pair has a review decision,pass,0,0 undecided pairs,data/reference/firm_map_review.csv

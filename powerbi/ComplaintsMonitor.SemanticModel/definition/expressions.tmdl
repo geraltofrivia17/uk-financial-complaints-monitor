@@ -1,0 +1,12 @@
+/// SQL Server instance holding the ComplaintsMonitor warehouse. Change in Transform data > Edit parameters.
+expression SqlServer = "localhost\SQLEXPRESS" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 347fc1e8-a253-480e-99e0-40c1596a01c1
+
+	annotation PBI_ResultType = Text
+
+/// Warehouse database name.
+expression SqlDatabase = "ComplaintsMonitor" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 9a44c361-5585-41b1-a089-134935535c36
+
+	annotation PBI_ResultType = Text
+

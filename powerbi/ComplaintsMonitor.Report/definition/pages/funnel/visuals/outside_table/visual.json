@@ -1,0 +1,237 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "outside_table",
+  "position": {
+    "x": 1148,
+    "y": 256,
+    "z": 8000,
+    "height": 760,
+    "width": 740,
+    "tabOrder": 8000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Firm"
+                    }
+                  },
+                  "Property": "Firm"
+                }
+              },
+              "queryRef": "Firm.Firm",
+              "nativeQueryRef": "Firm",
+              "displayName": "Firm"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Firm funnel"
+                    }
+                  },
+                  "Property": "Closed complaints"
+                }
+              },
+              "queryRef": "Firm funnel.Closed complaints",
+              "nativeQueryRef": "Closed complaints",
+              "displayName": "Closed"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Firm funnel"
+                    }
+                  },
+                  "Property": "Uphold rate"
+                }
+              },
+              "queryRef": "Firm funnel.Uphold rate",
+              "nativeQueryRef": "Uphold rate",
+              "displayName": "Uphold rate"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Firm funnel"
+                    }
+                  },
+                  "Property": "Pooled rate"
+                }
+              },
+              "queryRef": "Firm funnel.Pooled rate",
+              "nativeQueryRef": "Pooled rate",
+              "displayName": "Pooled rate"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Firm funnel"
+                    }
+                  },
+                  "Property": "z (adjusted)"
+                }
+              },
+              "queryRef": "Firm funnel.z (adjusted)",
+              "nativeQueryRef": "z (adjusted)",
+              "displayName": "z (adjusted)"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Firm funnel"
+                    }
+                  },
+                  "Property": "Funnel position"
+                }
+              },
+              "queryRef": "Firm funnel.Funnel position",
+              "nativeQueryRef": "Funnel position",
+              "displayName": "Position"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Firm funnel"
+                  }
+                },
+                "Property": "z (adjusted)"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Firms outside the adjusted 99.8% limits'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "outside998",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Firm funnel"
+              }
+            },
+            "Property": "Funnel position"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "f",
+              "Entity": "Firm funnel",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "f"
+                          }
+                        },
+                        "Property": "Funnel position"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Above 99.8% limit'"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Below 99.8% limit'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

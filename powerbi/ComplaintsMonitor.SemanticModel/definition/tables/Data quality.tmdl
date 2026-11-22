@@ -1,0 +1,43 @@
+/// Results of the data-quality checks run during the build.
+table 'Data quality'
+	lineageTag: 24872f93-33c0-5b8b-9aa3-4d8469da0d52
+
+	column Check
+		dataType: string
+		lineageTag: 3d60526d-a7d1-507a-8698-01b1af2714d9
+		summarizeBy: none
+		sourceColumn: check_name
+
+	column Status
+		dataType: string
+		lineageTag: 80be2dad-28ac-5191-b700-1b1899a76989
+		summarizeBy: none
+		sourceColumn: status
+
+	column Actual
+		dataType: string
+		lineageTag: 8d7d2f41-72d0-56f3-a3e3-ce91a9923d9f
+		summarizeBy: none
+		sourceColumn: actual
+
+	column Expected
+		dataType: string
+		lineageTag: 5a316cd0-7284-5c02-a4d1-9f3300cc3641
+		summarizeBy: none
+		sourceColumn: expected
+
+	column Detail
+		dataType: string
+		lineageTag: e25cbd8d-3723-5134-94a8-a013f3104a9f
+		summarizeBy: none
+		sourceColumn: detail
+
+	partition 'Data quality' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database(SqlServer, SqlDatabase),
+				    Data = Source{[Schema="dq", Item="checks"]}[Data]
+				in
+				    Data
+

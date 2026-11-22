@@ -1,0 +1,21 @@
+period_label,file,start_date,end_date,min_cases,published,note
+2016 H2,Business-complaints-data-H2-2016.xlsx,2016-07-01,2016-12-31,30,,
+2017 H1,Business-complaints-data-H1-2017.xlsx,2017-01-01,2017-06-30,30,,
+2017 H2,Business-complaints-data-H2-2017.xlsx,2017-07-01,2017-12-31,30,,
+2018 H1,Business-complaints-data-H1-2018.xlsx,2018-01-01,2018-06-30,30,,
+2018 H2,Business-complaints-data-H2-2018.xlsx,2018-07-01,2018-12-31,30,,
+2019 H1,Business-complaints-data-H1-2019.xlsx,2019-01-01,2019-06-30,30,,
+2019 H2,Business-complaints-data-H2-2019.xlsx,2019-07-01,2019-12-31,30,,
+2020 H1,Business-complaints-data-H1-2020.xlsx,2020-01-01,2020-06-30,30,,
+2020 H2,Business-complaints-data-H2-2020.xlsx,2020-07-01,2020-12-31,30,,
+2021 H1,Business-complaints-data-H1-2021.xlsx,2021-01-01,2021-06-30,30,2021-09-24,
+2021 H2,Business-complaints-data-H2-2021.xlsx,2021-07-01,2021-12-31,30,2022-04-12,
+2022 H1,Business-complaints-data-H1-2022.xlsx,2022-01-01,2022-06-30,30,2022-09-22,
+2022 H2,Business-complaints-data-H2-2022.xlsx,2022-07-01,2022-12-31,30,2023-03-22,
+2023 H1,Business-complaints-data-H1-2023.xlsx,2023-01-01,2023-06-30,30,2023-10-11,
+2023 H2,Business-complaints-data-H2-2023.xlsx,2023-07-01,2023-12-31,30,2024-05-01,
+2024 H1,Business-complaints-data-H1-2024.xlsx,2024-01-01,2024-06-30,30,2024-10-25,
+2024 H2,Business-complaints-data-H2-2024.xlsx,2024-07-01,2024-12-31,30,2025-05-06,
+2025 H1,Business-complaints-data-H1-2025.xlsx,2025-01-01,2025-06-30,30,2025-10-29,
+2025 H2,Business-complaints-data-H2-2025.xlsx,2025-07-01,2026-03-31,45,2026-07-22,One-off nine-month period; published threshold 45 new and 45 resolved complaints
+2026 H1,Business-complaints-data-H1-2026.xlsx,2026-04-01,2026-09-30,30,2026-10-22,First period on the April to September schedule

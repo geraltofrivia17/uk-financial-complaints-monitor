@@ -1,0 +1,229 @@
+/// Every measure in the report. Rates are recomputed from counts, never averaged.
+table 'Key measures'
+	lineageTag: 7328f228-e340-59c6-ae22-fed96f678f22
+
+	/// Complaints opened, all firms reporting to the FCA.
+	measure 'Complaints opened' = SUM ( Market[opened] )
+		formatString: #,0
+		displayFolder: Market
+		lineageTag: 54078f83-a846-545b-8be9-91ffba42fa7f
+
+	measure 'Complaints closed' = SUM ( Market[closed] )
+		formatString: #,0
+		displayFolder: Market
+		lineageTag: 3fde2e2f-c33e-59ff-a280-6dd3f89ce547
+
+	measure 'Complaints upheld' = SUM ( Market[upheld] )
+		formatString: #,0
+		displayFolder: Market
+		lineageTag: 4a17d633-7b45-5b16-ab8b-65b3768167b8
+
+	/// Share of closed complaints the firm upheld, recomputed from counts.
+	measure 'Uphold rate' = DIVIDE ( [Complaints upheld], [Complaints closed] )
+		formatString: 0.0%
+		displayFolder: Market
+		lineageTag: d771384e-3edc-5327-a503-2078667afdde
+
+	measure 'Closed within 3 days' = DIVIDE ( SUM ( Market[closed_within_3d] ), [Complaints closed] )
+		formatString: 0.0%
+		displayFolder: Market
+		lineageTag: 9f565c22-6a65-5499-a08f-7167d4aada2f
+
+	measure 'Closed after 8 weeks' = DIVIDE ( SUM ( Market[closed_over_8w] ), [Complaints closed] )
+		formatString: 0.0%
+		displayFolder: Market
+		lineageTag: c52fa384-f949-5bd6-9dc2-11d497f74bd4
+
+	measure 'Redress paid' = SUM ( Market[redress_upheld] ) + SUM ( Market[redress_not_upheld] )
+		formatString: £#,0
+		displayFolder: Market
+		lineageTag: 1359feee-3602-5e07-b582-efbde2d6620c
+
+	measure 'Redress per upheld complaint' = DIVIDE ( SUM ( Market[redress_upheld] ), [Complaints upheld] )
+		formatString: £#,0
+		displayFolder: Market
+		lineageTag: efa350c7-3aa6-5e3e-94e5-9698d2aeeb9d
+
+	/// The half-year selected on the page, or the latest one when none is selected.
+	measure 'Selected half-year order' = IF ( ISFILTERED ( Period[Half-year] ), MAX ( Period[Period order] ), MAXX ( ALL ( Period ), Period[Period order] ) )
+		formatString: 0
+		displayFolder: Market
+		lineageTag: 30eb0be8-886b-5056-bd9c-0a011b2a2ad9
+
+	measure 'Selected half-year' =
+			VAR p = [Selected half-year order]
+			RETURN
+			    CALCULATE ( MAX ( Period[Half-year] ), REMOVEFILTERS ( Period ), Period[Period order] = p )
+		displayFolder: Market
+		lineageTag: eb163edb-8dd0-554d-8424-a0f384c379ca
+
+	measure 'Opened in selected half-year' =
+			VAR p = [Selected half-year order]
+			RETURN
+			    CALCULATE ( [Complaints opened], REMOVEFILTERS ( Period ), Period[Period order] = p )
+		formatString: #,0
+		displayFolder: Market
+		lineageTag: 452a5a53-782a-593e-a0c7-6c0fb3c39853
+
+	/// Change against the same half-year a year earlier (period order steps by 10 per year).
+	measure 'Opened change on a year earlier' =
+			VAR p = [Selected half-year order]
+			VAR thisHalf = CALCULATE ( [Complaints opened], REMOVEFILTERS ( Period ), Period[Period order] = p )
+			VAR yearEarlier = CALCULATE ( [Complaints opened], REMOVEFILTERS ( Period ), Period[Period order] = p - 10 )
+			RETURN
+			    DIVIDE ( thisHalf - yearEarlier, yearEarlier )
+		formatString: +0.0%;-0.0%;0.0%
+		displayFolder: Market
+		lineageTag: 33a77cf2-3203-5fbf-9678-a943634b969d
+
+	measure 'Uphold rate in selected half-year' =
+			VAR p = [Selected half-year order]
+			RETURN
+			    CALCULATE ( [Uphold rate], REMOVEFILTERS ( Period ), Period[Period order] = p )
+		formatString: 0.0%
+		displayFolder: Market
+		lineageTag: fdfab361-bb37-5794-982d-596a01062d4a
+
+	/// Difference in percentage points.
+	measure 'Uphold rate change on a year earlier (points)' =
+			VAR p = [Selected half-year order]
+			RETURN
+			    100 * (
+			        CALCULATE ( [Uphold rate], REMOVEFILTERS ( Period ), Period[Period order] = p )
+			        - CALCULATE ( [Uphold rate], REMOVEFILTERS ( Period ), Period[Period order] = p - 10 )
+			    )
+		formatString: +0.0" pts";-0.0" pts";0.0" pts"
+		displayFolder: Market
+		lineageTag: 445f1e36-375d-53db-a865-30b53fc7dfd0
+
+	measure 'Closed within 3 days in selected half-year' =
+			VAR p = [Selected half-year order]
+			RETURN
+			    CALCULATE ( [Closed within 3 days], REMOVEFILTERS ( Period ), Period[Period order] = p )
+		formatString: 0.0%
+		displayFolder: Market
+		lineageTag: 2560fcbf-c529-503f-ae0e-772c065db924
+
+	/// Redress paid in the selected half-year, £ millions.
+	measure 'Redress in selected half-year' =
+			VAR p = [Selected half-year order]
+			RETURN
+			    DIVIDE ( CALCULATE ( [Redress paid], REMOVEFILTERS ( Period ), Period[Period order] = p ), 1000000 )
+		formatString: £#,0"m"
+		displayFolder: Market
+		lineageTag: cc73ceb8-e433-5cf5-a733-6012cc1fa2c6
+
+	measure 'Firm complaints opened' = SUM ( 'Firm half-year'[opened] )
+		formatString: #,0
+		displayFolder: Firms
+		lineageTag: 8358e157-cbae-51dc-8bad-5c2ccc64d178
+
+	measure 'Firm complaints closed' = SUM ( 'Firm half-year'[closed] )
+		formatString: #,0
+		displayFolder: Firms
+		lineageTag: a4c21b24-04b8-59c1-b3a8-15a6ebd7b463
+
+	/// Derived as published uphold rate x closed; the FCA does not publish firm-level upheld counts.
+	measure 'Firm complaints upheld' = SUM ( 'Firm half-year'[upheld_derived] )
+		formatString: #,0
+		displayFolder: Firms
+		lineageTag: d2e82d94-864c-5fad-810b-13c63c263fc4
+
+	measure 'Firm uphold rate' = DIVIDE ( [Firm complaints upheld], [Firm complaints closed] )
+		formatString: 0.0%
+		displayFolder: Firms
+		lineageTag: 163bc4cf-b2ea-597d-8f44-cd59f77c5e27
+
+	measure 'Firm closed within 3 days' = DIVIDE ( SUM ( 'Firm half-year'[closed_3d_derived] ), [Firm complaints closed] )
+		formatString: 0.0%
+		displayFolder: Firms
+		lineageTag: d0975787-318d-5a75-ad3f-7d5e9e893923
+
+	measure 'Share of listed firms'' complaints' = DIVIDE ( [Firm complaints opened], CALCULATE ( [Firm complaints opened], REMOVEFILTERS ( Firm ) ) )
+		formatString: 0.0%
+		displayFolder: Firms
+		lineageTag: c715b201-4e27-5598-98c4-0568d482990f
+
+	measure 'Top 10 firms'' share of complaints' =
+			VAR top10 = TOPN ( 10, ALL ( Firm ), [Firm complaints opened] )
+			RETURN
+			    DIVIDE ( CALCULATE ( [Firm complaints opened], top10 ), CALCULATE ( [Firm complaints opened], REMOVEFILTERS ( Firm ) ) )
+		formatString: 0.0%
+		displayFolder: Firms
+		lineageTag: ab588998-b34f-5b48-be55-fdcd47c16c56
+
+	measure 'Firm rank by complaints' = IF ( HASONEVALUE ( Firm[firm_id] ), RANKX ( ALL ( Firm ), [Firm complaints opened],, DESC, DENSE ) )
+		formatString: 0
+		displayFolder: Firms
+		lineageTag: 47e3e251-b0fb-5abd-92c7-fcf3d035b87d
+
+	measure 'Firms compared' = COUNTROWS ( 'Firm funnel' )
+		formatString: #,0
+		displayFolder: Funnel
+		lineageTag: 6de1e0b4-7746-551e-837f-72f082a2bf8b
+
+	measure 'Firms above adjusted 99.8% limit' = CALCULATE ( COUNTROWS ( 'Firm funnel' ), 'Firm funnel'[Funnel position] = "Above 99.8% limit" ) + 0
+		formatString: #,0
+		displayFolder: Funnel
+		lineageTag: 0fae9b6c-50b0-5f10-a2cb-eb49c1034c2b
+
+	measure 'Firms below adjusted 99.8% limit' = CALCULATE ( COUNTROWS ( 'Firm funnel' ), 'Firm funnel'[Funnel position] = "Below 99.8% limit" ) + 0
+		formatString: #,0
+		displayFolder: Funnel
+		lineageTag: f50b11c2-3881-5047-92a7-821c12de7207
+
+	/// Without the adjustment for variation between firms most large firms fall outside, which is why the adjusted limits are used.
+	measure 'Firms outside binomial 99.8% limits' = CALCULATE ( COUNTROWS ( 'Firm funnel' ), 'Firm funnel'[Binomial position] IN { "Above 99.8% limit", "Below 99.8% limit" } ) + 0
+		formatString: #,0
+		displayFolder: Funnel
+		lineageTag: 3f8775e1-3f4e-52b1-b35a-48d34033f564
+
+	measure 'Ombudsman new cases' = SUM ( 'Firm vs Ombudsman'[Ombudsman new cases] )
+		formatString: #,0
+		displayFolder: Ombudsman
+		lineageTag: 33c7d4ad-86fa-5138-8f4d-34660bad181b
+
+	/// Weighted by new cases because the Ombudsman does not publish resolved counts by business.
+	measure 'Ombudsman uphold rate (case-weighted)' = DIVIDE ( SUMX ( 'Firm vs Ombudsman', 'Firm vs Ombudsman'[Ombudsman new cases] * 'Firm vs Ombudsman'[Ombudsman uphold rate] ), [Ombudsman new cases] )
+		formatString: 0.0%
+		displayFolder: Ombudsman
+		lineageTag: bdfd4280-f468-56b0-8c8a-06d46eb42c60
+
+	measure 'Firm uphold rate (case-weighted)' = DIVIDE ( SUMX ( 'Firm vs Ombudsman', 'Firm vs Ombudsman'[Ombudsman new cases] * 'Firm vs Ombudsman'[Firm uphold rate] ), [Ombudsman new cases] )
+		formatString: 0.0%
+		displayFolder: Ombudsman
+		lineageTag: 13a87015-80c3-51f2-93e7-01c846e66230
+
+	measure 'Pairs where the Ombudsman upheld more' = DIVIDE ( CALCULATE ( COUNTROWS ( 'Firm vs Ombudsman' ), 'Firm vs Ombudsman'[Uphold gap (points)] > 0 ), COUNTROWS ( 'Firm vs Ombudsman' ) )
+		formatString: 0.0%
+		displayFolder: Ombudsman
+		lineageTag: 6dc0bbf0-0460-534f-b973-c415fdab818c
+
+	/// Complaints in the firm-level tables as a share of the whole-market total. Below 100% by design: different populations.
+	measure 'Firm-level coverage of the market' = DIVIDE ( SUM ( Coverage[firm_opened] ), SUM ( Coverage[market_opened] ) )
+		formatString: 0.0%
+		displayFolder: Data quality
+		lineageTag: f5996421-5059-5b20-b86b-8810b555dac4
+
+	measure 'Checks failed' = CALCULATE ( COUNTROWS ( 'Data quality' ), 'Data quality'[Status] = "fail" ) + 0
+		formatString: 0
+		displayFolder: Data quality
+		lineageTag: c745877a-af63-554c-9f3c-75969dbcc0d9
+
+	measure 'Checks with warnings' = CALCULATE ( COUNTROWS ( 'Data quality' ), 'Data quality'[Status] = "warn" ) + 0
+		formatString: 0
+		displayFolder: Data quality
+		lineageTag: a1df77dd-5ab0-589c-99cf-27eab5c7cc96
+
+	column Column
+		dataType: string
+		isHidden
+		lineageTag: 387fc53c-3472-56ca-979b-86f32604fce9
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Column]
+
+	partition 'Key measures' = calculated
+		mode: import
+		source = Row("Column", BLANK())
+

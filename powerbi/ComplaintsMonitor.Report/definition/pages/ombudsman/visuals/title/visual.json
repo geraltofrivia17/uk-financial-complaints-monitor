@@ -1,0 +1,48 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "title",
+  "position": {
+    "x": 32,
+    "y": 16,
+    "z": 0,
+    "height": 84,
+    "width": 1240,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Firm decisions against Ombudsman outcomes",
+                    "textStyle": {
+                      "fontSize": "20pt",
+                      "color": "#252423",
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Ombudsman uphold rate on escalated cases next to the firm's own uphold rate, for an FCA reporting period covering at least 75% of the Ombudsman period.",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#605E5C"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

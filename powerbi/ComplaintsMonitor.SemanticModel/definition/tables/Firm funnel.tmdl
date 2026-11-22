@@ -1,0 +1,203 @@
+/// Firm uphold rates against the pooled rate for the product group, with binomial and overdispersion-adjusted limits.
+table 'Firm funnel'
+	lineageTag: e429f015-63af-5095-96ed-9061c3f91ab6
+
+	column period_label
+		dataType: string
+		isHidden
+		lineageTag: 73d449ff-4652-51f6-b22a-c1fba9aac385
+		summarizeBy: none
+		sourceColumn: period_label
+
+	column product_group
+		dataType: string
+		isHidden
+		lineageTag: c4b7258e-fcee-5871-b4ff-0810a6706645
+		summarizeBy: none
+		sourceColumn: product_group
+
+	column firm_id
+		dataType: string
+		isHidden
+		lineageTag: 5ddd42e0-444a-52a8-bb44-772bfe9b231a
+		summarizeBy: none
+		sourceColumn: firm_id
+
+	column 'Closed complaints'
+		dataType: int64
+		formatString: #,0
+		lineageTag: 1136c7ac-defa-561d-97f9-a7fed880ebde
+		summarizeBy: sum
+		sourceColumn: closed
+
+	column 'Uphold rate'
+		dataType: double
+		formatString: 0.0%
+		lineageTag: 4f180b30-f003-50a5-87b1-e6fc83e4645b
+		summarizeBy: none
+		sourceColumn: uphold_rate
+
+	column 'Pooled rate'
+		dataType: double
+		formatString: 0.0%
+		lineageTag: b9d851b8-9b8d-513d-91fe-a7b76c45d1ad
+		summarizeBy: none
+		sourceColumn: pooled_rate
+
+	column 'Lower 99.8% (adjusted)'
+		dataType: double
+		formatString: 0.0%
+		lineageTag: 4a95d07f-a7fd-56d9-9252-b8a387d25f6c
+		summarizeBy: none
+		sourceColumn: lower_998_adj
+
+	column 'Upper 99.8% (adjusted)'
+		dataType: double
+		formatString: 0.0%
+		lineageTag: 739215ec-b91f-51f5-8661-684f34067119
+		summarizeBy: none
+		sourceColumn: upper_998_adj
+
+	column 'z (adjusted)'
+		dataType: double
+		formatString: 0.00
+		lineageTag: 92cebb1c-cdaa-5783-8d83-f56ffaadfbf2
+		summarizeBy: none
+		sourceColumn: z_adjusted
+
+	column 'Funnel position'
+		dataType: string
+		lineageTag: f5da56b0-d84c-53b4-83c0-370d6c6911f6
+		summarizeBy: none
+		sourceColumn: position_adjusted
+
+	column 'Binomial position'
+		dataType: string
+		lineageTag: dc3b0264-9770-5e3c-96ea-35b4407cb69b
+		summarizeBy: none
+		sourceColumn: position_binomial
+
+	column period_order
+		dataType: int64
+		formatString: 0
+		lineageTag: 64eba8a3-f28b-4e8e-bca2-e84ab9a6054e
+		summarizeBy: sum
+		sourceColumn: period_order
+
+		annotation SummarizationSetBy = Automatic
+
+	column firm_name_latest
+		dataType: string
+		lineageTag: bb1848b4-bfae-431e-87af-3f05e1e9b956
+		summarizeBy: none
+		sourceColumn: firm_name_latest
+
+		annotation SummarizationSetBy = Automatic
+
+	column upheld
+		dataType: int64
+		formatString: 0
+		lineageTag: 138ff640-bd45-4dc8-87b4-b51ca1f2a631
+		summarizeBy: sum
+		sourceColumn: upheld
+
+		annotation SummarizationSetBy = Automatic
+
+	column firms_in_group
+		dataType: int64
+		formatString: 0
+		lineageTag: 80359e76-d927-4928-808c-efbb741eec86
+		summarizeBy: sum
+		sourceColumn: firms_in_group
+
+		annotation SummarizationSetBy = Automatic
+
+	column tau2
+		dataType: double
+		lineageTag: 1b51e327-2437-49d0-a8e4-54b436758e06
+		summarizeBy: sum
+		sourceColumn: tau2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column lower_95
+		dataType: double
+		lineageTag: d0a1623b-6499-4d9a-8a4f-cf36da3d0844
+		summarizeBy: sum
+		sourceColumn: lower_95
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column upper_95
+		dataType: double
+		lineageTag: d03c9426-ecfd-4d74-ba77-945b6a38e8df
+		summarizeBy: sum
+		sourceColumn: upper_95
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column lower_998
+		dataType: double
+		lineageTag: 42a7902a-9db9-42db-adf8-dc58c34e164a
+		summarizeBy: sum
+		sourceColumn: lower_998
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column upper_998
+		dataType: double
+		lineageTag: 8c85a983-da62-416d-9f83-e8493a320b3f
+		summarizeBy: sum
+		sourceColumn: upper_998
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column lower_95_adj
+		dataType: double
+		lineageTag: 2ff71832-4a44-4069-8656-9808d3acc3bb
+		summarizeBy: sum
+		sourceColumn: lower_95_adj
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column upper_95_adj
+		dataType: double
+		lineageTag: 18de6d67-29cb-4116-8d82-4f4de8e414dc
+		summarizeBy: sum
+		sourceColumn: upper_95_adj
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column z_score
+		dataType: double
+		lineageTag: 74d98252-8786-453d-8d07-476d4e19d9ce
+		summarizeBy: sum
+		sourceColumn: z_score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'Firm funnel' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database(SqlServer, SqlDatabase),
+				    Data = Source{[Schema="rpt", Item="v_firm_funnel"]}[Data]
+				in
+				    Data
+

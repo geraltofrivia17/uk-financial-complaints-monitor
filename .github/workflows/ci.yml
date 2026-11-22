@@ -1,0 +1,82 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    name: Lint and tests
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+      - name: Install
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements-dev.lock
+          python -m pip install -e . --no-deps
+      - name: Ruff
+        run: |
+          ruff check src tests
+          ruff format --check src tests
+      - name: Tests
+        run: python -m pytest
+
+  sqlserver:
+    name: SQL Server load and data tests
+    runs-on: ubuntu-24.04
+    needs: checks
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+      - name: Start SQL Server 2022 (throwaway container)
+        run: |
+          # A random password for a container that exists only for this job.
+          password="Ci$(openssl rand -hex 12)!A"
+          echo "::add-mask::$password"
+          echo "COMPLAINTS_SQL_PASSWORD=$password" >> "$GITHUB_ENV"
+          docker run -d --name mssql -e ACCEPT_EULA=Y -e "MSSQL_SA_PASSWORD=$password" \
+            -p 1433:1433 mcr.microsoft.com/mssql/server:2022-latest
+      - name: ODBC driver
+        run: |
+          if ! odbcinst -q -d | grep -q "ODBC Driver 18 for SQL Server"; then
+            curl -fsSL https://packages.microsoft.com/keys/microsoft.asc | sudo gpg --dearmor -o /usr/share/keyrings/microsoft-prod.gpg
+            curl -fsSL https://packages.microsoft.com/config/ubuntu/24.04/prod.list | sudo tee /etc/apt/sources.list.d/mssql-release.list
+            sudo apt-get update
+            sudo ACCEPT_EULA=Y apt-get install -y msodbcsql18
+          fi
+          odbcinst -q -d
+      - name: Install
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements-dev.lock
+          python -m pip install -e . --no-deps
+      - name: Wait for SQL Server
+        run: |
+          for i in $(seq 1 60); do
+            if docker exec mssql /opt/mssql-tools18/bin/sqlcmd -C -S localhost -U sa -P "$COMPLAINTS_SQL_PASSWORD" -Q "SELECT 1" >/dev/null 2>&1; then
+              echo "ready after ${i}s"; exit 0
+            fi
+            sleep 1
+          done
+          docker logs mssql; exit 1
+      - name: Load warehouse and run SQL data tests
+        env:
+          COMPLAINTS_SQL_SERVER: localhost,1433
+          COMPLAINTS_SQL_USER: sa
+        run: python -m complaints_monitor load
+      - name: SQL views match the Python analysis
+        env:
+          COMPLAINTS_SQL_SERVER: localhost,1433
+          COMPLAINTS_SQL_USER: sa
+          COMPLAINTS_SQL_TESTS: "1"
+        run: python -m pytest tests/test_sqlserver.py

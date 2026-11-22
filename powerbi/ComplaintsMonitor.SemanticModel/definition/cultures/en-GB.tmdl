@@ -1,0 +1,872 @@
+cultureInfo en-GB
+
+	linguisticMetadata =
+			{
+			  "Version": "2.0.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "key_measures.opened_in_selected_halfyear": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Key measures",
+			          "ConceptualProperty": "Opened in selected half-year"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Complaints opened": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "key_measures.opened_change_on_a_year_earlier": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Key measures",
+			          "ConceptualProperty": "Opened change on a year earlier"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Change on a year earlier": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "key_measures.uphold_rate_in_selected_halfyear": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Key measures",
+			          "ConceptualProperty": "Uphold rate in selected half-year"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Upheld by firms": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "key_measures.uphold_rate_change_on_a_year_earlier_points": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Key measures",
+			          "ConceptualProperty": "Uphold rate change on a year earlier (points)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Change on a year earlier (points)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "key_measures.closed_within_3_days_in_selected_halfyear": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Key measures",
+			          "ConceptualProperty": "Closed within 3 days in selected half-year"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Closed within 3 days": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "key_measures.redress_in_selected_halfyear": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Key measures",
+			          "ConceptualProperty": "Redress in selected half-year"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Redress paid": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "key_measures.firms_compared": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Key measures",
+			          "ConceptualProperty": "Firms compared"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Firms compared": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "key_measures.firms_above_adjusted_99_8_limit": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Key measures",
+			          "ConceptualProperty": "Firms above adjusted 99.8% limit"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Above the adjusted 99.8% limit": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "key_measures.firms_below_adjusted_99_8_limit": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Key measures",
+			          "ConceptualProperty": "Firms below adjusted 99.8% limit"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Below the adjusted 99.8% limit": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "key_measures.firms_outside_binomial_99_8_limits": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Key measures",
+			          "ConceptualProperty": "Firms outside binomial 99.8% limits"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Outside binomial limits (no adjustment)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "key_measures.ombudsman_uphold_rate_caseweighted": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Key measures",
+			          "ConceptualProperty": "Ombudsman uphold rate (case-weighted)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Ombudsman upheld (weighted by cases)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "key_measures.firm_uphold_rate_caseweighted": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Key measures",
+			          "ConceptualProperty": "Firm uphold rate (case-weighted)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Firms upheld (same weighting)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "key_measures.pairs_where_the_ombudsman_upheld_more": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Key measures",
+			          "ConceptualProperty": "Pairs where the Ombudsman upheld more"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Pairs where the Ombudsman upheld more": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "key_measures.ombudsman_new_cases": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Key measures",
+			          "ConceptualProperty": "Ombudsman new cases"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Ombudsman new cases": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "key_measures.firm_complaints_opened": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Key measures",
+			          "ConceptualProperty": "Firm complaints opened"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Opened": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "key_measures.firm_complaints_closed": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Key measures",
+			          "ConceptualProperty": "Firm complaints closed"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Closed": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "key_measures.firm_uphold_rate": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Key measures",
+			          "ConceptualProperty": "Firm uphold rate"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Upheld": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "key_measures.firm_closed_within_3_days": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Key measures",
+			          "ConceptualProperty": "Firm closed within 3 days"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Closed within 3 days": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "key_measures.checks_failed": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Key measures",
+			          "ConceptualProperty": "Checks failed"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Checks failed": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "key_measures.checks_with_warnings": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Key measures",
+			          "ConceptualProperty": "Checks with warnings"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Checks with warnings": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "key_measures.firmlevel_coverage_of_the_market": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Key measures",
+			          "ConceptualProperty": "Firm-level coverage of the market"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Firm-level share of market complaints": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "firm.firm": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Firm",
+			          "ConceptualProperty": "Firm"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Firm": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "firm_funnel.closed_complaints": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Firm funnel",
+			          "ConceptualProperty": "Closed complaints"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Closed": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "firm_funnel.uphold_rate": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Firm funnel",
+			          "ConceptualProperty": "Uphold rate"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Uphold rate": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "firm_funnel.pooled_rate": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Firm funnel",
+			          "ConceptualProperty": "Pooled rate"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Pooled rate": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "firm_funnel.z_adjusted": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Firm funnel",
+			          "ConceptualProperty": "z (adjusted)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "z (adjusted)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "firm_funnel.funnel_position": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Firm funnel",
+			          "ConceptualProperty": "Funnel position"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Position": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "product_group.product_group": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Product group",
+			          "ConceptualProperty": "Product group"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Product group": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "firm_vs_ombudsman.fca_halfyear": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Firm vs Ombudsman",
+			          "ConceptualProperty": "FCA half-year"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "FCA period": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "firm_vs_ombudsman.firm_uphold_rate": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Firm vs Ombudsman",
+			          "ConceptualProperty": "Firm uphold rate"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Firm upheld": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "firm_vs_ombudsman.ombudsman_uphold_rate": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Firm vs Ombudsman",
+			          "ConceptualProperty": "Ombudsman uphold rate"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Ombudsman upheld": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "firm_vs_ombudsman.uphold_gap_points": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Firm vs Ombudsman",
+			          "ConceptualProperty": "Uphold gap (points)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Gap": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "period.halfyear": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Period",
+			          "ConceptualProperty": "Half-year"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Half-year": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "firm_halfyear.name_as_published": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Firm half-year",
+			          "ConceptualProperty": "Name as published"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Name as published": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "firm_halfyear.reporting_start": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Firm half-year",
+			          "ConceptualProperty": "Reporting start"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Reporting start": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "firm_halfyear.reporting_end": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Firm half-year",
+			          "ConceptualProperty": "Reporting end"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Reporting end": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "data_quality.check": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Data quality",
+			          "ConceptualProperty": "Check"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Check": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "data_quality.status": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Data quality",
+			          "ConceptualProperty": "Status"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Status": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "data_quality.actual": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Data quality",
+			          "ConceptualProperty": "Actual"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Actual": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "data_quality.expected": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Data quality",
+			          "ConceptualProperty": "Expected"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Expected": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "data_quality.detail": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Data quality",
+			          "ConceptualProperty": "Detail"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Detail": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    }
+			  }
+			}
+		contentType: json
+

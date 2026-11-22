@@ -1,0 +1,218 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "firm_table",
+  "position": {
+    "x": 32,
+    "y": 568,
+    "z": 4000,
+    "height": 448,
+    "width": 1856,
+    "tabOrder": 4000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Period"
+                    }
+                  },
+                  "Property": "Half-year"
+                }
+              },
+              "queryRef": "Period.Half-year",
+              "nativeQueryRef": "Half-year",
+              "displayName": "Half-year"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Product group"
+                    }
+                  },
+                  "Property": "Product group"
+                }
+              },
+              "queryRef": "Product group.Product group",
+              "nativeQueryRef": "Product group",
+              "displayName": "Product group"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Firm half-year"
+                    }
+                  },
+                  "Property": "Name as published"
+                }
+              },
+              "queryRef": "Firm half-year.Name as published",
+              "nativeQueryRef": "Name as published",
+              "displayName": "Name as published"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Firm half-year"
+                    }
+                  },
+                  "Property": "Reporting start"
+                }
+              },
+              "queryRef": "Firm half-year.Reporting start",
+              "nativeQueryRef": "Reporting start",
+              "displayName": "Reporting start"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Firm half-year"
+                    }
+                  },
+                  "Property": "Reporting end"
+                }
+              },
+              "queryRef": "Firm half-year.Reporting end",
+              "nativeQueryRef": "Reporting end",
+              "displayName": "Reporting end"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Key measures"
+                    }
+                  },
+                  "Property": "Firm complaints opened"
+                }
+              },
+              "queryRef": "Key measures.Firm complaints opened",
+              "nativeQueryRef": "Firm complaints opened",
+              "displayName": "Opened"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Key measures"
+                    }
+                  },
+                  "Property": "Firm complaints closed"
+                }
+              },
+              "queryRef": "Key measures.Firm complaints closed",
+              "nativeQueryRef": "Firm complaints closed",
+              "displayName": "Closed"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Key measures"
+                    }
+                  },
+                  "Property": "Firm uphold rate"
+                }
+              },
+              "queryRef": "Key measures.Firm uphold rate",
+              "nativeQueryRef": "Firm uphold rate",
+              "displayName": "Upheld"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Key measures"
+                    }
+                  },
+                  "Property": "Firm closed within 3 days"
+                }
+              },
+              "queryRef": "Key measures.Firm closed within 3 days",
+              "nativeQueryRef": "Firm closed within 3 days",
+              "displayName": "Closed within 3 days"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Period"
+                  }
+                },
+                "Property": "Half-year"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Reported figures'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

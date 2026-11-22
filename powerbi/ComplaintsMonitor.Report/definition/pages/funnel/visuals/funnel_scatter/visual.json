@@ -1,0 +1,148 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "funnel_scatter",
+  "position": {
+    "x": 32,
+    "y": 256,
+    "z": 7000,
+    "height": 760,
+    "width": 1100,
+    "tabOrder": 7000
+  },
+  "visual": {
+    "visualType": "scatterChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Firm"
+                    }
+                  },
+                  "Property": "Firm"
+                }
+              },
+              "queryRef": "Firm.Firm",
+              "nativeQueryRef": "Firm",
+              "active": true
+            }
+          ]
+        },
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Firm funnel"
+                    }
+                  },
+                  "Property": "Funnel position"
+                }
+              },
+              "queryRef": "Firm funnel.Funnel position",
+              "nativeQueryRef": "Funnel position"
+            }
+          ]
+        },
+        "X": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Firm funnel"
+                        }
+                      },
+                      "Property": "Closed complaints"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Firm funnel.Closed complaints)",
+              "nativeQueryRef": "Closed complaints",
+              "active": true,
+              "displayName": "Complaints closed"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Firm funnel"
+                        }
+                      },
+                      "Property": "Uphold rate"
+                    }
+                  },
+                  "Function": 1
+                }
+              },
+              "queryRef": "Avg(Firm funnel.Uphold rate)",
+              "nativeQueryRef": "Uphold rate",
+              "displayName": "Uphold rate"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Uphold rate against complaints closed'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "title",
+  "position": {
+    "x": 32,
+    "y": 16,
+    "z": 0,
+    "height": 84,
+    "width": 1240,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Data quality",
+                    "textStyle": {
+                      "fontSize": "20pt",
+                      "color": "#252423",
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Checks run on every build. Firm-level complaints are expected to be a large but partial share of the market total: the two cover different populations.",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#605E5C"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

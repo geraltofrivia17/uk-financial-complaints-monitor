@@ -1,0 +1,28 @@
+/// The FCA's five product groups.
+table 'Product group'
+	lineageTag: 35877d16-810f-5ddd-9758-97929cd7ec02
+
+	column 'Product group'
+		dataType: string
+		lineageTag: fe3b02e9-80ce-537a-bd04-9dea24e5a7fa
+		summarizeBy: none
+		sourceColumn: product_group
+		sortByColumn: 'Sort order'
+
+	column 'Sort order'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: b75f9863-3b1d-5fe8-94d4-a05425eab755
+		summarizeBy: none
+		sourceColumn: sort_order
+
+	partition 'Product group' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database(SqlServer, SqlDatabase),
+				    Data = Source{[Schema="dw", Item="dim_product_group"]}[Data]
+				in
+				    Data
+

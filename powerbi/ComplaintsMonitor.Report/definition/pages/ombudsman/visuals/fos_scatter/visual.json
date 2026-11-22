@@ -1,0 +1,171 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "fos_scatter",
+  "position": {
+    "x": 32,
+    "y": 256,
+    "z": 7000,
+    "height": 760,
+    "width": 820,
+    "tabOrder": 7000
+  },
+  "visual": {
+    "visualType": "scatterChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Firm"
+                    }
+                  },
+                  "Property": "Firm"
+                }
+              },
+              "queryRef": "Firm.Firm",
+              "nativeQueryRef": "Firm",
+              "active": true
+            }
+          ]
+        },
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Product group"
+                    }
+                  },
+                  "Property": "Product group"
+                }
+              },
+              "queryRef": "Product group.Product group",
+              "nativeQueryRef": "Product group"
+            }
+          ]
+        },
+        "Size": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Firm vs Ombudsman"
+                        }
+                      },
+                      "Property": "Ombudsman new cases"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Firm vs Ombudsman.Ombudsman new cases)",
+              "nativeQueryRef": "Ombudsman new cases"
+            }
+          ]
+        },
+        "X": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Firm vs Ombudsman"
+                        }
+                      },
+                      "Property": "Firm uphold rate"
+                    }
+                  },
+                  "Function": 1
+                }
+              },
+              "queryRef": "Avg(Firm vs Ombudsman.Firm uphold rate)",
+              "nativeQueryRef": "Firm uphold rate",
+              "active": true,
+              "displayName": "Firm uphold rate"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Firm vs Ombudsman"
+                        }
+                      },
+                      "Property": "Ombudsman uphold rate"
+                    }
+                  },
+                  "Function": 1
+                }
+              },
+              "queryRef": "Avg(Firm vs Ombudsman.Ombudsman uphold rate)",
+              "nativeQueryRef": "Ombudsman uphold rate",
+              "displayName": "Ombudsman uphold rate"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Firm uphold rate against Ombudsman uphold rate'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

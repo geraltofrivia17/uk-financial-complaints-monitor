@@ -1,0 +1,158 @@
+/// Ombudsman uphold rates next to the firm's own rate for an FCA reporting period covering at least 75% of the Ombudsman period.
+table 'Firm vs Ombudsman'
+	lineageTag: a8866e3b-96a4-5230-9309-93badcae0512
+
+	column 'Ombudsman period'
+		dataType: string
+		lineageTag: feb75f2e-1e9f-58cc-acab-a3e2edea19b3
+		summarizeBy: none
+		sourceColumn: fos_period
+		sortByColumn: fos_period_order
+
+	column fos_period_order
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: b15649c5-4e9f-5f25-8322-79ff562d16ec
+		summarizeBy: none
+		sourceColumn: fos_period_order
+
+	column 'Ombudsman start'
+		dataType: dateTime
+		formatString: dd mmm yyyy
+		lineageTag: 5cc297a4-4224-54bb-95a4-22a0230bfece
+		summarizeBy: none
+		sourceColumn: fos_start
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Ombudsman end'
+		dataType: dateTime
+		formatString: dd mmm yyyy
+		lineageTag: 1b613cb1-2c68-5bbb-861c-d2c729752423
+		summarizeBy: none
+		sourceColumn: fos_end
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'FCA half-year'
+		dataType: string
+		lineageTag: 48eaa376-1032-51f5-b06c-cc1f2225e634
+		summarizeBy: none
+		sourceColumn: fca_period
+
+	column firm_id
+		dataType: string
+		isHidden
+		lineageTag: acca194d-ef9c-5aa4-aa53-6a758ed3b799
+		summarizeBy: none
+		sourceColumn: firm_id
+
+	column 'Business name (Ombudsman)'
+		dataType: string
+		lineageTag: 95ca0e23-39aa-573c-98a8-bf2602022e3a
+		summarizeBy: none
+		sourceColumn: fos_business_name
+
+	column product_group
+		dataType: string
+		isHidden
+		lineageTag: d2dc6c80-914e-515e-a70d-63953645d8f4
+		summarizeBy: none
+		sourceColumn: product_group
+
+	column 'Firm closed complaints'
+		dataType: int64
+		formatString: #,0
+		lineageTag: 19661766-1a73-5c73-8c60-22883b20f19d
+		summarizeBy: sum
+		sourceColumn: fca_closed
+
+	column 'Firm uphold rate'
+		dataType: double
+		formatString: 0.0%
+		lineageTag: 967123c9-8fc0-5762-873f-0b1734771cdf
+		summarizeBy: none
+		sourceColumn: fca_uphold_rate
+
+	column 'Ombudsman new cases'
+		dataType: int64
+		isHidden
+		formatString: #,0
+		lineageTag: 1809a2f6-4802-5b6b-8432-1e879c69b89c
+		summarizeBy: sum
+		sourceColumn: fos_new_cases
+
+	column 'Ombudsman uphold rate'
+		dataType: double
+		formatString: 0.0%
+		lineageTag: 3d9a3b33-ddb1-5e0e-8f3e-820e74de18ef
+		summarizeBy: none
+		sourceColumn: fos_uphold_rate
+
+	column 'Uphold gap (points)'
+		dataType: double
+		formatString: +0.0%;-0.0%;0.0%
+		lineageTag: b89f4cf4-cc07-54eb-8503-58c6d446afb2
+		summarizeBy: none
+		sourceColumn: uphold_gap
+
+	column fca_start
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 46ebd892-a435-454b-970d-737eed1551e8
+		summarizeBy: none
+		sourceColumn: fca_start
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column fca_end
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 35d7df98-72f1-4c91-baa7-981466236c4a
+		summarizeBy: none
+		sourceColumn: fca_end
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column firm_name_latest
+		dataType: string
+		lineageTag: 5d3b2e2b-8801-4f29-a3cf-4bdf60316be1
+		summarizeBy: none
+		sourceColumn: firm_name_latest
+
+		annotation SummarizationSetBy = Automatic
+
+	column fos_cases_per_closed
+		dataType: double
+		lineageTag: 59738be8-8b96-43b4-83af-2640ddca6ef1
+		summarizeBy: sum
+		sourceColumn: fos_cases_per_closed
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column overlap_share
+		dataType: double
+		lineageTag: 8948f5be-6eb5-4970-9790-f40e09cdb0cb
+		summarizeBy: sum
+		sourceColumn: overlap_share
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'Firm vs Ombudsman' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database(SqlServer, SqlDatabase),
+				    Data = Source{[Schema="rpt", Item="v_fca_vs_ombudsman"]}[Data]
+				in
+				    Data
+

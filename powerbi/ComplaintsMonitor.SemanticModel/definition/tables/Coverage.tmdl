@@ -1,0 +1,62 @@
+/// Firm-level complaints as a share of the market total.
+table Coverage
+	lineageTag: fa798083-610c-5578-a862-6d282e4dc6f0
+
+	column period_label
+		dataType: string
+		isHidden
+		lineageTag: d8407aa3-c3f8-5d93-9b57-da3465b4d762
+		summarizeBy: none
+		sourceColumn: period_label
+
+	column product_group
+		dataType: string
+		isHidden
+		lineageTag: 1fa5b95e-4d58-5412-b181-958f4864c878
+		summarizeBy: none
+		sourceColumn: product_group
+
+	column market_opened
+		dataType: int64
+		isHidden
+		formatString: #,0
+		lineageTag: 8305ecca-e680-5ab7-b52c-e7cc76a1e1f5
+		summarizeBy: sum
+		sourceColumn: market_opened
+
+	column firm_opened
+		dataType: int64
+		isHidden
+		formatString: #,0
+		lineageTag: 66c48440-ee61-517b-a7c0-8d6b23b653d6
+		summarizeBy: sum
+		sourceColumn: firm_opened
+
+	column firms
+		dataType: int64
+		formatString: 0
+		lineageTag: 77ef859c-0d0f-47b6-89d5-b055cf2ccd57
+		summarizeBy: sum
+		sourceColumn: firms
+
+		annotation SummarizationSetBy = Automatic
+
+	column coverage
+		dataType: double
+		lineageTag: b4b40123-c7ca-442b-a126-071303845edc
+		summarizeBy: sum
+		sourceColumn: coverage
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition Coverage = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database(SqlServer, SqlDatabase),
+				    Data = Source{[Schema="rpt", Item="v_coverage"]}[Data]
+				in
+				    Data
+

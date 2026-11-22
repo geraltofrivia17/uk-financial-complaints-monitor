@@ -1,0 +1,48 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "title",
+  "position": {
+    "x": 32,
+    "y": 16,
+    "z": 0,
+    "height": 84,
+    "width": 1240,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Firm profile",
+                    "textStyle": {
+                      "fontSize": "20pt",
+                      "color": "#252423",
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Complaints and uphold rates for one firm over time, by product group, from the FCA firm-level data. Each row keeps the firm's own reporting dates.",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#605E5C"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

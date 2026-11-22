@@ -1,0 +1,141 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "checks",
+  "position": {
+    "x": 32,
+    "y": 256,
+    "z": 4000,
+    "height": 420,
+    "width": 1856,
+    "tabOrder": 4000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Data quality"
+                    }
+                  },
+                  "Property": "Check"
+                }
+              },
+              "queryRef": "Data quality.Check",
+              "nativeQueryRef": "Check",
+              "displayName": "Check"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Data quality"
+                    }
+                  },
+                  "Property": "Status"
+                }
+              },
+              "queryRef": "Data quality.Status",
+              "nativeQueryRef": "Status",
+              "displayName": "Status"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Data quality"
+                    }
+                  },
+                  "Property": "Actual"
+                }
+              },
+              "queryRef": "Data quality.Actual",
+              "nativeQueryRef": "Actual",
+              "displayName": "Actual"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Data quality"
+                    }
+                  },
+                  "Property": "Expected"
+                }
+              },
+              "queryRef": "Data quality.Expected",
+              "nativeQueryRef": "Expected",
+              "displayName": "Expected"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Data quality"
+                    }
+                  },
+                  "Property": "Detail"
+                }
+              },
+              "queryRef": "Data quality.Detail",
+              "nativeQueryRef": "Detail",
+              "displayName": "Detail"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Data-quality checks'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

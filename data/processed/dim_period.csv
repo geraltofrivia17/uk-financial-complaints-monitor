@@ -1,0 +1,41 @@
+source,period_label,start_date,end_date,months,min_threshold,note,period_order
+FCA,2016 H2,2016-07-01,2016-12-31,6,,Firms report on their own financial half-years; each row keeps its own dates,20162
+FCA,2017 H1,2017-01-01,2017-06-30,6,,Firms report on their own financial half-years; each row keeps its own dates,20171
+FCA,2017 H2,2017-07-01,2017-12-31,6,,Firms report on their own financial half-years; each row keeps its own dates,20172
+FCA,2018 H1,2018-01-01,2018-06-30,6,,Firms report on their own financial half-years; each row keeps its own dates,20181
+FCA,2018 H2,2018-07-01,2018-12-31,6,,Firms report on their own financial half-years; each row keeps its own dates,20182
+FCA,2019 H1,2019-01-01,2019-06-30,6,,Firms report on their own financial half-years; each row keeps its own dates,20191
+FCA,2019 H2,2019-07-01,2019-12-31,6,,Firms report on their own financial half-years; each row keeps its own dates,20192
+FCA,2020 H1,2020-01-01,2020-06-30,6,,Firms report on their own financial half-years; each row keeps its own dates,20201
+FCA,2020 H2,2020-07-01,2020-12-31,6,,Firms report on their own financial half-years; each row keeps its own dates,20202
+FCA,2021 H1,2021-01-01,2021-06-30,6,,Firms report on their own financial half-years; each row keeps its own dates,20211
+FCA,2021 H2,2021-07-01,2021-12-31,6,,Firms report on their own financial half-years; each row keeps its own dates,20212
+FCA,2022 H1,2022-01-01,2022-06-30,6,,Firms report on their own financial half-years; each row keeps its own dates,20221
+FCA,2022 H2,2022-07-01,2022-12-31,6,,Firms report on their own financial half-years; each row keeps its own dates,20222
+FCA,2023 H1,2023-01-01,2023-06-30,6,,Firms report on their own financial half-years; each row keeps its own dates,20231
+FCA,2023 H2,2023-07-01,2023-12-31,6,,Firms report on their own financial half-years; each row keeps its own dates,20232
+FCA,2024 H1,2024-01-01,2024-06-30,6,,Firms report on their own financial half-years; each row keeps its own dates,20241
+FCA,2024 H2,2024-07-01,2024-12-31,6,,Firms report on their own financial half-years; each row keeps its own dates,20242
+FCA,2025 H1,2025-01-01,2025-06-30,6,,Firms report on their own financial half-years; each row keeps its own dates,20251
+FCA,2025 H2,2025-07-01,2025-12-31,6,,Firms report on their own financial half-years; each row keeps its own dates,20252
+FCA,2026 H1,2026-01-01,2026-06-30,6,,Firms report on their own financial half-years; each row keeps its own dates,20261
+Ombudsman,2016 H2,2016-07-01,2016-12-31,6,30.0,,20162
+Ombudsman,2017 H1,2017-01-01,2017-06-30,6,30.0,,20171
+Ombudsman,2017 H2,2017-07-01,2017-12-31,6,30.0,,20172
+Ombudsman,2018 H1,2018-01-01,2018-06-30,6,30.0,,20181
+Ombudsman,2018 H2,2018-07-01,2018-12-31,6,30.0,,20182
+Ombudsman,2019 H1,2019-01-01,2019-06-30,6,30.0,,20191
+Ombudsman,2019 H2,2019-07-01,2019-12-31,6,30.0,,20192
+Ombudsman,2020 H1,2020-01-01,2020-06-30,6,30.0,,20201
+Ombudsman,2020 H2,2020-07-01,2020-12-31,6,30.0,,20202
+Ombudsman,2021 H1,2021-01-01,2021-06-30,6,30.0,,20211
+Ombudsman,2021 H2,2021-07-01,2021-12-31,6,30.0,,20212
+Ombudsman,2022 H1,2022-01-01,2022-06-30,6,30.0,,20221
+Ombudsman,2022 H2,2022-07-01,2022-12-31,6,30.0,,20222
+Ombudsman,2023 H1,2023-01-01,2023-06-30,6,30.0,,20231
+Ombudsman,2023 H2,2023-07-01,2023-12-31,6,30.0,,20232
+Ombudsman,2024 H1,2024-01-01,2024-06-30,6,30.0,,20241
+Ombudsman,2024 H2,2024-07-01,2024-12-31,6,30.0,,20242
+Ombudsman,2025 H1,2025-01-01,2025-06-30,6,30.0,,20251
+Ombudsman,2025 H2,2025-07-01,2026-03-31,9,45.0,One-off nine-month period; published threshold 45 new and 45 resolved complaints,20252
+Ombudsman,2026 H1,2026-04-01,2026-09-30,6,30.0,First period on the April to September schedule,20261

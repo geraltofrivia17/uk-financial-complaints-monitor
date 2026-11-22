@@ -1,0 +1,168 @@
+/// Whole-market totals from the FCA aggregate complaints data (over 3,000 firms).
+table Market
+	lineageTag: 965b6f4c-b201-530b-b22e-f3cc49f0a9af
+
+	column period_label
+		dataType: string
+		isHidden
+		lineageTag: c99a453f-ef4e-5e34-ab5a-9cf18368c2de
+		summarizeBy: none
+		sourceColumn: period_label
+
+	column product_group
+		dataType: string
+		isHidden
+		lineageTag: 2175221e-c1ad-57d8-a59c-1ed5f4b733af
+		summarizeBy: none
+		sourceColumn: product_group
+
+	column opened
+		dataType: int64
+		isHidden
+		formatString: #,0
+		lineageTag: 98b57623-741b-5d1e-a2e0-fe2b41ccfd19
+		summarizeBy: sum
+		sourceColumn: opened
+
+	column closed
+		dataType: int64
+		isHidden
+		formatString: #,0
+		lineageTag: f9f05e66-ad67-5a2d-a659-4a817580f88e
+		summarizeBy: sum
+		sourceColumn: closed
+
+	column upheld
+		dataType: int64
+		isHidden
+		formatString: #,0
+		lineageTag: 8c954907-d363-5dd7-8c45-f5171004c18b
+		summarizeBy: sum
+		sourceColumn: upheld
+
+	column closed_within_3d
+		dataType: int64
+		isHidden
+		formatString: #,0
+		lineageTag: ab4b164e-c99a-5176-844d-d125774b12a8
+		summarizeBy: sum
+		sourceColumn: closed_within_3d
+
+	column closed_3d_8w
+		dataType: int64
+		isHidden
+		formatString: #,0
+		lineageTag: 6bf72d7a-406b-5bfb-b145-59f154b1f9b4
+		summarizeBy: sum
+		sourceColumn: closed_3d_8w
+
+	column closed_over_8w
+		dataType: int64
+		isHidden
+		formatString: #,0
+		lineageTag: e6c7613c-1c6c-5b1a-b580-4369264e662b
+		summarizeBy: sum
+		sourceColumn: closed_over_8w
+
+	column redress_upheld
+		dataType: int64
+		isHidden
+		formatString: #,0
+		lineageTag: 3ae01926-ce8d-5c12-b2ca-64906d3ca5d1
+		summarizeBy: sum
+		sourceColumn: redress_upheld
+
+	column redress_not_upheld
+		dataType: int64
+		isHidden
+		formatString: #,0
+		lineageTag: 46dbf33d-ca6d-548c-9fe3-6f31cc178d89
+		summarizeBy: sum
+		sourceColumn: redress_not_upheld
+
+	column 'Latest release'
+		dataType: string
+		lineageTag: 7df92d50-2fdf-59c1-903a-2d059e4de465
+		summarizeBy: none
+		sourceColumn: latest_vintage
+
+	column start_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 9b991d07-0782-409d-8474-f8bcccd1a33a
+		summarizeBy: none
+		sourceColumn: start_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column end_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 318c4094-3bd7-4920-a6d6-cb20f8d138b7
+		summarizeBy: none
+		sourceColumn: end_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column period_order
+		dataType: int64
+		formatString: 0
+		lineageTag: 8178a7d2-1088-4d7c-a442-46323ede29f5
+		summarizeBy: sum
+		sourceColumn: period_order
+
+		annotation SummarizationSetBy = Automatic
+
+	column uphold_rate
+		dataType: double
+		lineageTag: 37c72cd4-03ce-42b4-bb1b-67b771f82b73
+		summarizeBy: sum
+		sourceColumn: uphold_rate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column share_closed_3d
+		dataType: double
+		lineageTag: fd06971d-f2d2-4efc-8a0f-df5c88695377
+		summarizeBy: sum
+		sourceColumn: share_closed_3d
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column share_closed_over_8w
+		dataType: double
+		lineageTag: 37162501-bf07-4132-9835-55bd7a19bdec
+		summarizeBy: sum
+		sourceColumn: share_closed_over_8w
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column redress_per_upheld
+		dataType: double
+		lineageTag: 0d1876c0-8c5e-4252-be4b-6499675b5578
+		summarizeBy: sum
+		sourceColumn: redress_per_upheld
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition Market = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database(SqlServer, SqlDatabase),
+				    Data = Source{[Schema="rpt", Item="v_market_half_year"]}[Data]
+				in
+				    Data
+

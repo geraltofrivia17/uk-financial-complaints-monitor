@@ -1,0 +1,35 @@
+fos_business_name,fca_firm_name,score,decision,review_note
+Accelerant Insurance Europe SA/NV,Accelerant Insurance Europe SA/NV UK Branch,84.4,accept,The UK branch is part of the same legal entity
+Portal Financial Services LLP,RAC FINANCIAL SERVICES LIMITED,89.4,reject,Different firms: the names share only generic words such as Insurance Company or Financial Services
+Advantage Insurance Company Limited,Antares Insurance Company Limited,88.5,reject,Different firms: the names share only generic words such as Insurance Company or Financial Services
+Calpe Insurance Company Limited,Chaucer Insurance Company Designated Activity Company,87.5,reject,Different firms: the names share only generic words such as Insurance Company
+HFC Bank Limited,FCE Bank Plc,87.5,reject,Different firms: the names share only generic words such as Insurance Company or Financial Services
+Skyfire Insurance Company Limited,Sabre Insurance Company Limited,87.5,reject,Different firms: the names share only generic words such as Insurance Company or Financial Services
+Hiscox Underwriting Limited,Tesco Underwriting Limited,86.5,reject,Different firms: the names share only generic words such as Insurance Company or Financial Services
+MCE Insurance Company Limited,Sabre Insurance Company Limited,86.4,reject,Different firms: the names share only generic words such as Insurance Company or Financial Services
+Horizon Insurance Company Limited,Hiscox Insurance Company Limited,85.7,reject,Different firms: the names share only generic words such as Insurance Company or Financial Services
+Mulsanne Insurance Company Limited,Sabre Insurance Company Limited,85.7,reject,Different firms: the names share only generic words such as Insurance Company or Financial Services
+Cowen Insurance Company Limited,Hiscox Insurance Company Limited,85.1,reject,Different firms: the names share only generic words such as Insurance Company or Financial Services
+Domestic & General Services Limited,Domestic & General Insurance Plc,84.7,reject,Different legal entities in the same group
+International Insurance Company of Hannover SE,HCC International Insurance Company Plc,84.6,reject,Different firms: the names share only generic words such as Insurance Company or Financial Services
+One Insurance Limited,MCE Insurance Limited,84.6,reject,Different firms: the names share only generic words such as Insurance Company or Financial Services
+RAC Insurance Limited,MCE Insurance Limited,84.6,reject,Different firms: the names share only generic words such as Insurance Company or Financial Services
+Admiral Insurance Company Limited,Acromas Insurance Company Limited,84.0,reject,Different firms: the names share only generic words such as Insurance Company or Financial Services
+Elite Insurance Company Limited,Evolution Insurance Company Limited,84.0,reject,Different firms: the names share only generic words such as Insurance Company or Financial Services
+Tesla Financial Services Limited,Welcome Financial Services Limited,84.0,reject,Different firms: the names share only generic words such as Insurance Company or Financial Services
+John Lewis Financial Services Limited,Neilson Financial Services Limited,83.6,reject,Different firms: the names share only generic words such as Insurance Company or Financial Services
+Alwyn Insurance Company Limited,Antares Insurance Company Limited,83.3,reject,Different firms: the names share only generic words such as Insurance Company or Financial Services
+Haven Insurance Company Limited,Gresham Insurance Company Limited,83.3,reject,Different firms: the names share only generic words such as Insurance Company or Financial Services
+Motors Insurance Company Limited,Tradex Insurance Company PLC,83.3,reject,Different firms: the names share only generic words such as Insurance Company or Financial Services
+Aspen Insurance UK Limited,AXA Insurance UK Plc,82.4,reject,Different firms: the names share only generic words
+Salary Finance Loans Limited,Salary Finance Limited,82.4,reject,Different legal entities; the FCA lists Salary Finance Loans Limited as a joint reporter for consumer credit only
+Aviva Insurance Services UK Limited,Freeway UK Insurance Services Limited,82.1,reject,Different firms: the names share only generic words such as Insurance Company or Financial Services
+BUPA Insurance Limited,AXA Insurance Designated Activity Company,81.5,reject,Different firms: the names share only generic words such as Insurance Company
+Zenith Insurance plc,Zurich Insurance PLC,81.2,reject,Different firms: the names share only generic words such as Insurance Company or Financial Services
+Markerstudy Insurance Company Limited,Sabre Insurance Company Limited,80.8,reject,Different firms: the names share only generic words such as Insurance Company or Financial Services
+Bastion Insurance Co. Ltd,Acromas Insurance Company Limited,80.0,reject,Different firms: the names share only generic words
+National Savings and Investments,Nutmeg Saving and Investment Limited,80.0,reject,Different firms: the names share only generic words such as Insurance Company or Financial Services
+QIC Europe Ltd,NCO Europe Limited,80.0,reject,Different firms: the names share only generic words such as Insurance Company or Financial Services
+SAINSBURY'S FINANCIAL SERVICES LIMITED,NUCLEUS FINANCIAL SERVICES LIMITED,80.0,reject,Different firms: the names share only generic words
+Wakam,Oakam Ltd,80.0,reject,Different firms: the names share only generic words such as Insurance Company or Financial Services
+Wise Payments Limited,Paymentsense Limited,80.0,reject,Different firms: the names share only generic words such as Insurance Company or Financial Services
